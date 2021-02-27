@@ -1,0 +1,118 @@
+/* .container{   
+    padding: 94px 213px 93px 199px;
+    display: flex;
+}
+
+.inline-container {
+    float: left;    
+
+}
+
+.main-container{
+    border: 1px solid black;
+    border-radius: 5px;
+    
+    
+}
+
+.akhil{
+    clear: both;
+}
+
+.inline-container {
+    padding: 20px 5px 20px 20px;
+}
+
+.outline-container {
+    padding: 20px 5px 20px 20px;
+    
+    
+}
+
+.outline-container {
+    float: right;    
+}
+.google .logo{
+    width: 100px;
+    height: auto;
+}
+.first-name, .second-name{
+    display: inline-block;
+}
+
+.sign-in {
+    color: rgb(8, 8, 240);
+    font-size: 20px;
+    margin-top: 97px;
+    
+}
+.next {
+    background: blue;
+    color: white;
+    float: right;
+    font-size: 15px;
+    padding:10px 10px 10px 10px;
+}
+.nav-container {
+    padding-top: 24px;
+    width: 848px;
+}
+.nav-container .pull-left {
+    float: left;
+}
+
+.nav-container .pull-right {
+    float: right;
+    margin-left: 10px;
+    
+}
+
+.pass {
+    display: inline-block;
+}
+
+.checkbox {
+    font-size: 15px;
+}
+
+.line2 {
+    color:blue;
+    font-size: 20px;
+}
+
+.line3{
+    margin-top: 1px;
+}
+
+.hero {
+    padding-left: 10px;
+}
+
+.user-name {
+    margin-top: 34px;
+}
+.navigation {
+    display: flex;
+    justify-content: space-around;
+    padding
+}
+.help a {
+    padding: 1rem;
+    
+} */
+
+main {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    border: 1px solid black;
+
+}
+.container{   
+    display: grid;
+    grid-auto-flow: column;
+   
+}
+.container1, .container2 {
+    width: 50%;
+}
