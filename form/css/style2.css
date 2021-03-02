@@ -1,3 +1,220 @@
+
+.container {
+    box-sizing: border-box;
+    border: 1px solid lightgray;
+    width: 848px;
+    height: 674px;
+    padding: absolute;
+    left: 50%;
+    margin-left: 430px;
+    margin-top: 65px;
+    border-radius: 5px;
+   
+
+} 
+.inline-container {
+    width: 447px;
+    padding-top: 51px;
+}
+.img {
+    width: 25%;
+    margin-top: 25px;
+    margin-left: 46px;
+} 
+
+
+
+main h1 {
+    font-size: 21px;
+    margin-top: 21px;
+    margin-bottom: 30px;
+    margin-left: 46px;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+    margin-left: 46px;
+}
+.name {
+    padding: 7px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    width: 42%;
+}
+
+.mail {
+    padding: 7px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    width: 90%;
+    margin-top: 25px;
+}
+
+
+.text {
+    padding: 0px 8px;
+    margin-top: 5px;
+    font-size: 13px;
+    color: gray;
+}
+
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.address {
+    font-size: 15px;
+}
+
+
+.a {
+    text-decoration: none;
+    color: #1a73e8;
+}
+
+.password {
+    padding: 7px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    width: 42%;
+    margin-top: 30px;
+}
+
+
+.char {
+    margin-top: 2px;
+    font-size: 13px;
+    color: gray;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+input[type="checkbox" i] {
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 3px 3px 3px 4px;
+    padding: initial;
+    border: initial;
+}
+label {
+    cursor: default;
+    font-size: 15px;
+    vertical-align: bottom;
+}
+
+
+.next {
+    font-size: 14px;
+    padding: 45px 0px;
+    display: block;
+    margin-left: 46px;
+    margin-top: 76px;
+}
+
+
+
+
+a {
+    text-decoration: none;
+    color: #1a73e8;
+}
+
+
+.btn {
+    margin-left: 160px;
+    padding: 6px 17px;
+    background-color: #1a73e8;
+    color: white;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-weight: 800;
+}
+
+
+.outline-container {
+    margin-left: 20px;
+    display: block;
+    
+}
+
+
+aside {
+    display: block;
+    margin-top: -580px;
+    margin-left: 480px
+}
+
+aside img {
+    width: 100%;
+    margin-top: 15px;
+}
+
+aside p {
+    width: 65%;
+    text-align: center;
+    padding-left: 55px;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+footer {
+    margin-top: 200px;
+    margin-left: -5px;
+    border: 1px solid white;
+    display: block;
+}
+
+select {
+    height: 30px;
+    font-size: 11px;
+    border: 1px solid white;
+    background-color: white;
+}
+
+option {
+    font-weight: normal;
+    display: block;
+    white-space: pre;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+}
+
+#links {
+    float: right;
+    margin-top: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: #1a73e8
+    margin-right: 10px;
+    color: black;
+    font-size: 12px;
+} 
+
+
+
+
 /* .container{   
     padding: 94px 213px 93px 199px;
     display: flex;
@@ -101,7 +318,7 @@
     
 } */
 
-main {
+/* main {
     display: block;
     width: 50%;
     margin: 0 auto;
@@ -115,4 +332,4 @@ main {
 }
 .container1, .container2 {
     width: 50%;
-}
+} */
