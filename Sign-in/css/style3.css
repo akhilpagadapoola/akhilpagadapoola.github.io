@@ -1,0 +1,122 @@
+.container {
+    box-sizing: border-box;
+    border: 1px solid black;
+    width: 506px;
+    height: 570px;
+    padding: absolute;
+    left:50%;
+    margin-left: 504px;
+    margin-top: 147px;
+    border-radius: 5px;
+}
+.inline-container {
+    width: 418px;
+    display: center;
+
+}
+.img {
+    width: 25%;
+    margin-left: 210px;
+    margin-top: 54px;
+}
+
+main h1{
+    margin-left: 210px;
+    margin-top: 21px;
+
+}
+.text {
+    padding: 0px 8px;
+    margin-top: 5px;
+    font-size: 20px;
+    color: black;
+    margin-left: 150px;
+}
+form {
+    margin-left: 46px;
+    margin-top: 42px;
+}
+
+.email {
+    padding: 17px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 15px;
+
+}
+
+.forgot {
+    font-size: 15px;
+    
+}
+
+
+.a {
+    text-decoration: none;
+    color: #0d6ff0;
+   
+}
+
+.next {
+    font-size: 14px;
+    
+    display: block;
+    
+    margin-top: 76px;
+}
+
+
+
+
+a {
+    text-decoration: none;
+    color: #1a73e8;
+}
+
+
+.btn {
+    margin-left: 220px;
+    padding: 6px 17px;
+    background-color: #1a73e8;
+    color: white;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-weight: 800;
+}
+
+footer {
+    margin-top: 50px;
+    margin-left: -5px;
+    border: 1px solid white;
+    display: block;
+}
+
+select {
+    height: 30px;
+    font-size: 11px;
+    border: 1px solid white;
+    background-color: white;
+}
+
+option {
+    font-weight: normal;
+    display: block;
+    white-space: pre;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+}
+
+#links {
+    float: right;
+    margin-top: 5px;
+}
+
+.guest {
+    margin-top: 52px;
+
+}
+
+.learn {
+    margin-top: 0px;
+}
