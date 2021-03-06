@@ -1,0 +1,96 @@
+.container {
+    box-sizing: border-box;
+    border: 1px solid black;
+    /* width: 758px;
+    height: 735px; */
+    /* padding: absolute; */
+    left: 50%;
+
+    border-radius: 5px;
+    padding-top: 28px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 44px;
+    margin: 0 auto;
+}
+.main-container {
+    box-sizing: border-box;
+    border: 1px solid black;
+    width: 758px;
+    /* height: 867px; */
+    padding:absoulte;
+
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.hp {
+    margin-top: 30px;
+ 
+    margin-bottom: 24px;
+   
+ }
+ .name {
+    padding: 7px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    width: 44%;
+    height: 30px;
+    margin-bottom: 16px;
+    margin-right: 20px;
+    /* margin-left: 15px; */
+ }
+
+ .email {
+    padding: 7px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    width: 94%;
+    height: 30px;
+    margin-bottom: 16px;
+ }
+
+ .password {
+    padding: 7px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    width: 94%;
+    height: 30px;
+}
+
+.btn {
+    margin-left: 190px;
+    margin-top: 91px;
+    font-size: 30px;
+    padding: 17px;
+    width: 50%;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+}
+.date {
+    font-size: 20px;
+}
+
+.day, .month, .year {
+    width: 214px;
+    height: 60px;
+    font-size: 20px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.day, .month{
+    margin-right: 15px;
+}
+
+.gender {
+    font-size: 20px;
+}
+.format2 {
+    font-size: 30px;
+}
+
+.clicking {
+    font-size: 20px;
+}
