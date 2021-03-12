@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+div {
+    min-height: 100vh;
+    color:red;
+    font-size: 60px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.big-img {
+    background:url('./images/coffeee1.jpeg');
+ 
+    background-size: cover ;
+    background-repeat: no-repeat;
+    background-repeat: center;
+}
+.small-img{
+    background:url('./images/coffee2.jpeg');
+    border: 2px solid red;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+
+}
+.folder-img {
+    background: url(./images/coffee1.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
