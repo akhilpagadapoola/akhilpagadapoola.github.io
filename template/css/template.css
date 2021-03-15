@@ -1,0 +1,206 @@
+header {
+    background-color: rgb(6, 216, 6);
+    width: 100%;
+    height: 100%;
+}
+div {
+    width: 100%;
+    height: 100%;
+}
+.nav {
+    padding-top: 30px;
+}
+.btn {
+    background-color: rgb(31, 109, 31);
+}
+
+.awesome{
+    margin-left: 300px;
+    margin-right: 700px;
+    color: white;
+    text-decoration: none;
+}
+
+
+
+.hero-text-box{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: center;
+    color: white;
+    margin: auto;
+    width: 50vw;
+   
+}
+.features {
+    text-align: center;
+
+}
+ 
+.one {
+   
+    float: left;
+   
+    height: 400px;
+    width: 25%;
+
+}
+.two {
+   
+    float: left;
+   
+    height: 400px;
+    width: 25%;
+}
+.three {
+    
+    float: left;
+   
+    height: 400px;
+    width: 25%;
+}
+.four {
+    
+    float: left;
+   
+    height: 400px;
+    width: 25%;
+}
+
+.section3 {
+    text-align: center;
+}
+.five {
+    float: left;
+   
+    height: 200px;
+    width: 40%;
+}
+.six {
+    float: left;
+   
+    height: 200px;
+    width: 25%;
+}
+.seven {
+    float: left;
+   
+    height: 200px;
+    width: 25%;
+}
+.eight {
+    float: left;
+   
+    height: 200px;
+    width: 25%;
+}
+.nine {
+    float: left;
+    padding-right: 50px ;
+    height: 200px;
+    width: 25%;
+}
+.ten {
+    float: left;
+   
+    height: 200px;
+    width: 25%;
+} 
+.second-section{
+
+    background-color: black;
+}
+.img {
+    float: left;
+   
+    height: 400px;
+    width: 50%;
+}
+.macbook {
+    width: 50%;
+    padding-left: 50px;
+    padding-top: 50px;
+    
+
+  
+}
+.rocket {
+    float: left;
+   
+    height: 400px;
+    width: 50%;
+
+}
+.graph {
+    width: 100%;
+    height: 500px;
+    padding-left: 50px;
+    padding-top: 50px;
+    
+}
+.mainprice {
+    text-align: center;
+}
+.price1, .price2 , .price3{
+    float: left;
+    text-align: center;
+    margin-right: 70px;
+    margin-left: 70px;
+    height: 100%;
+    width: 25%;
+}
+
+.section6 {
+    text-align: center;
+   
+
+}
+.about1 ,.about2, .about3 {
+    float: left;
+    text-align: center;
+    margin-right: 70px;
+    margin-left: 70px;
+    
+    height: 100%;
+    width: 25%;
+}
+
+.section7 {
+    text-align: center;
+    margin-top: 50px;
+ 
+}
+
+.footer {
+    text-align: center;
+}
+
+/* .row {
+    float:left;
+    height: 400px;
+    width: 25%;
+    display:inline-block;
+} */
+
+
+
+
+/* .section {
+    clear: both;
+    padding: 0px;
+    margin: 0px;
+}
+
+.row::before,
+.row:after {
+    content: "";
+    display: table;
+}
+.row:after {
+    clear:both;
+}
+.col {
+    display: block;
+    float:left;
+    
+} */
