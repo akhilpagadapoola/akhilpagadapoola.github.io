@@ -1,4 +1,302 @@
+* {
+    margin: 0;
+}
+.section1 {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+ul {
+    float: left;
+    margin: unset;
+   
+}
+
+ul li {
+    float: left;
+    list-style: none;
+    /* padding: 0px 10px 0px 10px; */
+    text-decoration: none;
+  
+    
+
+}
+
 header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    /* padding-left: 150px;
+    padding-right: 150px; */
+    background-color: rgb(31, 175, 31);
+    
+}
+
+.logo {
+    padding-left: 100px;
+    
+}
+.logocolor {
+    color: white;
+    text-decoration: none;
+}
+.features {
+    color: white;
+    padding-right: 30px;
+    text-decoration: none;
+}
+
+.hero-text-box{
+    
+    text-align: center;
+    color: white;
+    background-color: rgb(31, 175, 31);
+    /* margin-top: -20px;
+    padding-top: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 100px; */
+    /* margin-bottom: 100px; */
+    width: 100%;
+    height: 30vh;
+    display: block;
+    margin: 0 auto;
+    
+   
+}
+.wrapper {
+    padding: 80px;
+}
+.para {
+    
+    /* width: 100vh; */
+    
+    text-align: center;
+    width:50%;
+    padding: 0px 400px 0px 400px;
+    /* padding-left: 300px;
+    padding-right: 500px; */
+   
+}
+
+.btn {
+    /* background-color: rgb(5, 245, 5); */
+    padding: 2px;
+    border: 1px solid green;
+
+    
+}
+.btn a {
+    text-decoration: none;
+}
+.featuresection {
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+}
+.row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    /* padding-right: 100px;
+    padding-left: 100px; */
+    padding: 100px 500px 100px 500px;
+    text-align: center;
+    width: 50%;
+    text-align: center;
+    margin-bottom: 100px;
+   
+    
+}
+.one ,.two, .three, .four {
+   
+    padding: 0px;
+
+}
+
+.featurestext {
+    text-align: center;
+
+    padding: 50px 500px 10px 500px;
+
+}
+.macsection {
+    
+    margin: 0 auto;
+    width: 100%;
+}
+.sub-section{
+
+    background-color: black;
+}
+.img {
+    float: left;
+   
+    height: 400px;
+    width: 50%;
+}
+.macbook {
+    width: 50%;
+    /* padding-left: 400px; */
+    margin-left: 400px;
+    padding-top: 50px;
+    
+
+  
+}
+.rocket {
+    float: left;
+    padding-top: 70px;
+    height: 400px;
+    width: 50%;
+
+}
+.section3 {
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+
+}
+.services {
+    text-align: center;
+    padding-bottom: 58px;
+    width: 50%;
+}
+ .block1 {
+    display: flex;
+    padding: 0px 500px 0px 500px;
+    width: 100%;
+ }
+ .block2 {
+    display: flex;
+    padding: 0px 500px 0px 500px;
+    width: 100%;
+ }
+.five, .six, .seven, .eight, .nine, .ten {
+    /* float: left; */
+    height: 200px;
+    width: 16.66%;
+}
+.graphimg {
+    background:url("./images/dashboard-img.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    min-height: 50vh;
+}
+
+.graph {
+    width: 100%;
+    height: 500px;
+    padding-left: 50px;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    
+} 
+.section5 {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.primeprice {
+     text-align: center;
+     padding-top: 100px;
+}
+.subprice {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    width: 100%;
+    /* padding-left: 462px; */
+    padding-top: 50px;
+}
+
+/* .mainprice {
+    text-align: center;
+    
+} */
+ .price1, .price2 , .price3{
+   
+    text-align: center;
+    /* margin-right: 70px;
+    margin-left: 70px; */
+    height: 50vh;
+    width: 50vw;
+    /* padding-bottom: 100px; */
+    /* background-color: rgb(230, 58, 5); */
+    
+}
+
+
+.section6 {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+
+}
+.primeabout {
+      text-align: center;
+}
+.subabout {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    width: 100%;
+    /* padding: 50px; */
+}
+/* .about1 ,.about2, .about3 {
+    float: left;
+    text-align: center;
+    margin-right: 70px;
+    margin-left: 70px;
+    padding-top: 100px;
+    height: 100%;
+    width: 25%;
+    padding-bottom: 100px;
+} */
+
+.section7 {
+    text-align: center;
+    width: 100%;
+    padding: 100px 100px 100px 100px;
+    background-color: rgb(31, 175, 31);
+    /* margin-top: 50px;
+    padding-bottom: 100px; */
+    
+     /* width: 806px;
+    height: 157px; */
+
+}
+
+.jpg1, .jpg2, .jpg3 {
+    width: 50%;
+}
+
+.footer {
+    text-align: center;
+    justify-content: space-around;
+    width: 100%;
+    padding: 50px 50px 50px 50px;
+   
+    
+     /* width: 800px;
+    height: 112px; */
+} 
+.test {
+    text-align: center;
+     
+ }
+.copy{
+    text-align: center;
+   
+}
+
+/* header {
     background-color: rgb(6, 216, 6);
     width: 100%;
     height: 100%;
@@ -11,7 +309,7 @@ div {
     padding-top: 30px;
 }
 .btn {
-    background-color: rgb(31, 109, 31);
+    background-color: rgb(5, 245, 5);
 }
 
 .awesome{
@@ -32,7 +330,7 @@ div {
     width: 50vw;
    
 }
-.features {
+.featurestext {
     text-align: center;
 
 }
@@ -168,12 +466,16 @@ div {
 .section7 {
     text-align: center;
     margin-top: 50px;
- 
-}
+    /* width: 806px;
+    height: 157px;
+  */
+/* }
 
 .footer {
-    text-align: center;
-}
+    text-align: center; */
+    /* width: 800px;
+    height: 112px;
+} */
 
 /* .row {
     float:left;
@@ -203,4 +505,4 @@ div {
     display: block;
     float:left;
     
-} */
+} */ */
