@@ -153,23 +153,23 @@ header {
 }
 .section3 {
     text-align: center;
-    margin: 0 auto;
     width: 100%;
-
+    padding: 100px 0 100px 0;
+    margin: 0 auto;
 }
-.services {
+.services1 {
     text-align: center;
-    padding-bottom: 58px;
-    width: 50%;
+   
+    font-size: 40px;
 }
  .block1 {
     display: flex;
-    padding: 0px 500px 0px 500px;
+    padding: 0px 450px 0px 450px;
     width: 100%;
  }
  .block2 {
     display: flex;
-    padding: 0px 500px 0px 500px;
+    padding: 0px 450px 0px 450px;
     width: 100%;
  }
 .five, .six, .seven, .eight, .nine, .ten {
@@ -239,11 +239,20 @@ header {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
     padding: 15px;
     padding-top: 10px;
+    transition: 0.3s;
 
    
   
     background-color: #f1f1f1;
     
+}
+.hovercolor:hover {
+    background-color:  rgb(128, 250, 14);
+    transition: 0.3s;
+
+}
+.price1:hover, .price2:hover, .price3:hover {
+    box-shadow: 0 8px 16px 0 rgb(128, 250, 14);
 }
 
 
