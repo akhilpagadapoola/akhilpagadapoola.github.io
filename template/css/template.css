@@ -246,11 +246,6 @@ header {
     background-color: #f1f1f1;
     
 }
-.hovercolor:hover {
-    background-color:  rgb(128, 250, 14);
-    transition: 0.3s;
-
-}
 .price1:hover, .price2:hover, .price3:hover {
     box-shadow: 0 8px 16px 0 rgb(128, 250, 14);
 }
