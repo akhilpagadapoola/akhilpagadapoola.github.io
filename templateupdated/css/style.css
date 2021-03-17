@@ -4,6 +4,14 @@
 .cp {
     padding: 25px;
 }
+.underline {
+    border-bottom: 2px solid green;
+    display: inline-block;
+    line-height: 0.85;
+    padding: 10px;
+    /* border-color: green; */
+    
+}
 .hovercolor:hover {
     background-color: green;
     transition: 0.3s;
@@ -50,10 +58,18 @@ header {
     color: white;
     text-decoration: none;
 }
+.logocolor:hover {
+    background-color: green;
+    transition: 0.3s;
+}
 .features {
     color: white;
     padding-right: 30px;
     text-decoration: none;
+}
+.features:hover {
+    background-color: green;
+    transition: 0.3s;
 }
 
 .hero-text-box{
@@ -82,8 +98,11 @@ header {
     /* width: 100vh; */
     
     text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding-top: 30px;
     width:50%;
-    padding: 0px 400px 0px 400px;
+    /* padding: 0px 400px 0px 400px; */
     /* padding-left: 300px;
     padding-right: 500px; */
    
@@ -107,15 +126,19 @@ header {
 }
 .row {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    /* align-items: flex-start; */
+    /* justify-content: space-between; */
     /* padding-right: 100px;
     padding-left: 100px; */
-    padding: 100px 500px 100px 500px;
+    /* padding: 100px 500px 100px 500px; */
+    /* text-align: center; */
+    width: 60%;
     text-align: center;
-    width: 50%;
-    text-align: center;
-    margin-bottom: 100px;
+    justify-content: center;
+    margin: 0 auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    /* margin-bottom: 100px; */
    
     
 }
@@ -127,8 +150,9 @@ header {
 
 .featurestext {
     text-align: center;
+    padding-top: 30px;
 
-    padding: 50px 500px 10px 500px;
+    /* padding: 50px 500px 10px 500px; */
 
 }
 .macsection {
@@ -138,7 +162,7 @@ header {
 }
 .sub-section{
 
-    background-color: black;
+    background-color: rgb(199, 189, 189);
 }
 .img {
     float: left;
@@ -156,10 +180,13 @@ header {
   
 }
 .rocket {
-    float: left;
+    /* float: left; */
     padding-top: 70px;
     height: 400px;
     width: 50%;
+    margin: 0 auto;
+    text-align: left;
+    justify-content: left;
 
 }
 .section3 {
@@ -175,13 +202,21 @@ header {
 }
  .block1 {
     display: flex;
-    padding: 0px 450px 0px 450px;
+    /* padding: 0px 450px 0px 450px; */
     width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+    padding-top: 30px;
  }
  .block2 {
     display: flex;
-    padding: 0px 450px 0px 450px;
+    /* padding: 0px 450px 0px 450px; */
     width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+    padding-top: 30px;
  }
 .five, .six, .seven, .eight, .nine, .ten {
     /* float: left; */
@@ -277,6 +312,7 @@ header {
     text-align: center;
     justify-content: space-between;
     width: 100%;
+    padding-top:30px;
     /* padding: 50px; */
 }
 /* .about1 ,.about2, .about3 {
