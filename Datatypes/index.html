@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+    <script>
+        alert( 1 / 0 ); // Infinity
+        alert( Infinity );
+        alert( "not a number" / 2 ); // NaN, such division is erroneous
+        alert( "not a number" / 2 + 5 ); // NaN
+        let str = "Hello";
+        let str2 = 'Single quotes are ok too';
+        let phrase = `can embed another ${str}`;
+        let name = "John";
+
+        // embed a variable
+        alert( `Hello, ${name}!` ); // Hello, John!
+
+        // embed an expression
+        alert( `the result is ${1 + 2}` ); // the result is 3
+        alert(`hello, ${9999999}!`);
+        alert( "the result is ${90}" ); // the result is ${1 + 2} (double quotes do nothing)
+
+        let isGreater = 4 > 1;
+
+        alert( isGreater ); // true (the comparison result is "yes")
+        
+        let age;
+
+        alert(age); // shows "undefined"
+
+        // let age = 100;
+
+        // // change the value to undefined
+        // age = undefined;
+
+        // alert(age); // "undefined"
+
+        let hero = "Ilya";
+
+        alert( `hello ${1}` ); // ?
+
+        alert( `hello ${"name"}` ); // ?
+
+        alert( `hello ${hero}` ); // ?
+
+
+        // let arr = new Array();
+        // let arr = [];
+
+        let fruits = ["Apple", "Orange", "Plum"];
+        alert( fruits[0] ); // Apple
+        alert( fruits[1] ); // Orange
+        alert( fruits[2] ); // Plum
+
+        // mix of values
+        let arr = [ 'Apple', { name: 'John' }, true, function() { alert('hello'); } ];
+
+        // get the object at index 1 and then show its name
+        alert( arr[1].name ); // John
+
+        // get the function at index 3 and run it
+        arr[3](); // hello
+         
+        // let arr = new Array();
+        // let arr = [];
+
+        let animals = ["tiger", "crocodile", "cat"];
+
+
+        alert( animals[0] ); // tiger
+        alert( animals[1] ); // crocodile
+        alert( animals[2] ); // cat
+
+        // animals[2] = 'bear'; // now [""tiger", "crocodile", "bear"]
+
+        // animals[3] = 'cow';
+
+        alert( animals.length ); 
+
+        // mix of values
+        
+        // let arr = [ 'Apple', { villian: 'akhil' }, true, function() { alert('hello'); } ];
+
+        // // get the object at index 1 and then show its name
+        // alert( arr[1].villian ); // akhil
+
+        // // get the function at index 3 and run it
+        // arr[3](); // hello
+        let danger = ["Apple", "Orange", "Pear"];
+
+        alert( danger.pop() ); // remove "Pear" and alert it
+
+        alert( danger ); // Apple, Orange
+
+        let empty = ["Apple", "Orange"];
+
+        empty.push("Pear");
+
+        alert( empty ); // Apple, Orange, Pear
+
+        let jungle = ["Apple", "Orange", "Pear"];
+
+        alert( jungle.shift() ); // remove Apple and alert it
+
+        alert( jungle ); // Orange, Pear
+
+        let glass = ["coffee", "tea"];
+
+        glass.unshift('bread');
+
+        alert( glass ); // Apple, Orange, Pear
+
+        let ball = ["Ant", "spider", "Pear"];
+
+        for (let i = 0; i < ball.length; i++) {
+        alert( ball[i] );
+        }
+
+        let balls = ["superman", "spiderman", "batmanz"];
+
+        // iterates over array elements
+        for (let ball of balls) {
+        alert( ball );
+        }
+
+        let cricket = ["virat", "rohit", "dhawan"];
+
+        for (let key in cricket) {
+        alert( cricket[key] ); // virat,rohit,dhawan
+        } 
+        let tv = [];
+        tv[130] = "Apple";
+
+        alert( tv.length ); // 124
+
+
+
+        let col = [1, 2, 3, 4, 5];
+
+        col.length = 2; // truncate to 2 elements
+        alert( col ); // [1, 2]
+
+        col.length = 5; // return length back
+        alert( col[3] ); // undefined: the values do not return
+
+        // let arr = new Array("Apple", "Pear", "etc");
+
+        let row = new Array(2); // will it create an array of [2] ?
+
+        alert( row[0] ); // undefined! no elements.
+
+        alert( row.length ); // length 2
+
+        let matrix = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+        ];
+
+        alert( matrix[1][1] ); // 5, the central element
+
+        alert( [] + 1 ); // "1"
+        alert( [1] + 1 ); // "11"
+        alert( [1,2] + 1 ); // "1,21"
+
+        alert( [] == [] ); // false
+        alert( [0] == [0] ); // false
+
+        let array = ["a", "b"];
+
+        array.push(function() {
+        alert( this );
+        })
+
+        arr[2](); // a,b,function(){...}
+    </script>
+</body>
+</html>
