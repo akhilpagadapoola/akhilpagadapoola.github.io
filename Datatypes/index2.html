@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+
+                alert( 1 / 0 ); // Infinity
+                alert( Infinity );
+                alert( "not a number" / 2 ); // NaN, such division is erroneous
+                alert( "not a number" / 2 + 5 ); // NaN
+                let hero = [
+                [1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]
+                ];
+
+                alert( hero[1][1] ); // 5, the central element
+                let danger = ["Apple", "Orange", "Pear"];
+
+                alert( danger.pop() ); // remove "Pear" and alert it
+
+                alert( danger ); // Apple, Orange
+
+                let hero1 = [
+                [1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]
+                ];
+
+                alert( hero1[1][1] ); // 5, the central element
+
+                // let arr = [42]       // Creates an array with only one element:
+                //                     // the number 42.
+
+                // let arr = Array(42)  // Creates an array with no elements
+                //                     // and arr.length set to 42.
+                //                     //
+                //                     // This is equivalent to:
+                // let arr = []
+                // arr.length = 42
+
+                // let myArray = ['Wind', 'Rain', 'Fire']
+
+                let okay = ['one', 'two', 'three']
+                alert( okay[2] );          // three
+                alert( okay['length'] );   // 3
+
+                let arr= Array(42)
+                alert (arr.length);
+
+                // let arra = Array(9.3)  
+                // alert( arra.length);
+
+                // let arry= Array.of(42)
+                // alert (arry.length);
+
+                // let wisenArray = Array.of(9.3) 
+                // alert (wisenArray.length);
+                let arra = ['one', 'two', 'three']
+                alert(arra[2]);          // three
+                alert(arra['length']);   // 3
+
+                let arry = []
+                arry[3.4] = 'Oranges'
+                alert(console.log(arry.length));              // 0
+                alert(console.log(arry.hasOwnProperty(3.4)));    // true
+
+                let cats = []
+                cats[30] = ['Dusty']
+                alert(console.log(cats.length));    // 31
+
+                let tiger = ['Dusty', 'Misty', 'Twiggy']
+                console.log(tiger.length)
+
+                let lion = ['Dusty', 'Misty', 'Twiggy']
+                console.log(lion.length)  // 3
+
+                cats.length = 2
+                console.log(lion)  // logs "Dusty, Misty" - Twiggy has been removed
+
+                cats.length = 0
+                console.log(lion)  // logs []; the cats array is empty
+
+                cats.length = 3
+                console.log(lion)  // logs [ <3 empty items> ]
+
+                    let colors = ['red', 'green', 'blue']
+                for (let i = 0; i < colors.length; i++) {
+                alert(colors[i]);
+                }
+
+                let flowers = ['red', 'green', 'blue']
+                colors.forEach(function(flowers) {
+                alert(flowers);
+                })
+
+
+                let allow = ['first', 'second', , 'fourth']
+
+                allow.forEach(function(element) {
+                alert(element);
+                })
+                // first
+                // second
+                // fourth
+
+                if (allow[2] === undefined) {
+                alert('array[2] is undefined');  // true
+                }
+
+
+
+                half = ['first', 'second', undefined, 'fourth']
+
+                half.forEach(function(element) {
+                alert(element);
+                })
+                // first
+                // second
+                // undefined
+                // fourth
+                let myArray = new Array('1', '2', '3')
+                alert(myArray = myArray.concat('a', 'b', 'c'));
+                // myArray is now ["1", "2", "3", "a", "b", "c"]
+                let myArray1 = new Array('Wind', 'Rain', 'Fire')
+                alert(myArray1.join(' - ')); // list is "Wind - Rain - Fire"
+
+                let myArray2 = new Array('1', '2')
+                alert(myArray2.push('3'));  // myArray is now ["1", "2", "3"]
+
+                let myArray3 = new Array('1', '2', '3')
+                alert(myArray3.reverse());
+                // transposes the array so that myArray = ["3", "2", "1"]
+
+                let myArray4 = new Array('Wind', 'Rain', 'Fire')
+                alert(myArray4.sort());
+                    // sorts the array so that myArray = ["Fire", "Rain", "Wind"]
+
+                    let a = ['a', 'b', 'a', 'b', 'a']
+                    alert(a.indexOf('b'));     // logs 1
+
+                    // Now try again, starting from after the last match
+                    alert(a.indexOf('b', 2));  // logs 3
+                    alert(a.indexOf('z'));     // logs -1, because 'z' was not found
+
+
+                    let b = ['a', 'b', 'c', 'd', 'a', 'b']
+                    alert(b.lastIndexOf('b'));     // logs 5
+
+                    // Now try again, starting from before the last match
+                    alert(b.lastIndexOf('b', 4));  // logs 1
+                    alert(b.lastIndexOf('z'));     // logs -1
+
+                    let a1 = ['a', 'b', 'c']
+                    let a2 = a1.map(function(item) { return item.toUpperCase() })
+                    alert(a2); // logs ['A', 'B', 'C']
+
+                    let a3 = ['a', 10, 'b', 20, 'c', 30]
+                    let a4 = a3.filter(function(item) { return typeof item === 'number'; })
+                    alert(a4);  // logs [10, 20, 30]
+
+
+                    function isNumber(value) {
+                    return typeof value === 'number'
+                    }
+                    let a5 = [1, 2, 3]
+                    alert(a5.every(isNumber));  // logs true
+                    let a6 = [1, '2', 3]
+                    alert(a6.every(isNumber));
+
+                    let d = [10, 20, 30]
+                    let total = d.reduce(function(accumulator, currentValue) { return accumulator + currentValue }, 0)
+                    alert(total);
+
+
+    </script>
+</body>
+</html>
