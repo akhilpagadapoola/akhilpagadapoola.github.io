@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+
+        <h2>JavaScript Variables</h2>
+        
+        <p id="demo"></p>
+        
+        <script>
+        // Create and display a variable:
+        var car = "Fiat";
+        document.getElementById("demo").innerHTML = car;
+        </script>
+
+        <p id="demo1"></p>
+
+        <script>
+        // Create an object:
+        var car = {type:"Fiat", model:"500", color:"white"};
+
+        // Display some data from the object:
+        document.getElementById("demo1").innerHTML = "The car type is " + car.type;
+        </script>
+
+        <p id="demo2"></p>
+
+        <script>
+        // Create an object:
+        var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+
+        // Display some data from the object:
+        document.getElementById("demo2").innerHTML =
+        person.firstName + " is " + person.age + " years old.";
+        </script>
+
+
+        <h2>JavaScript Objects</h2>
+
+        <p>There are two different ways to access an object property.</p>
+
+        <p>You can use person.property or person["property"].</p>
+
+        <p id="demo3"></p>
+
+        <script>
+        // Create an object:
+        var person = {
+        firstName: "John",
+        lastName : "Doe",
+        id     :  5566
+        };
+        // Display some data from the object:
+        document.getElementById("demo3").innerHTML =
+        person.firstName + " " + person.lastName;
+        </script>
+
+        <h2>JavaScript Objects</h2>
+
+        <p>There are two different ways to access an object property.</p>
+
+        <p>You can use person.property or person["property"].</p>
+
+        <p id="demo4"></p>
+
+        <script>
+        // Create an object:
+        var person = {
+        firstName: "John",
+        lastName : "Doe",
+        id     :  5566
+        };
+        // Display some data from the object:
+        document.getElementById("demo4").innerHTML =
+        person["firstName"] + " " + person["lastName"];
+        </script>
+         
+         <h2>JavaScript Objects</h2>
+
+         <p>An object method is a function definition, stored as a property value.</p>
+         
+         <p id="demo5"></p>
+         
+         <script>
+         // Create an object:
+         var person = {
+           firstName: "John",
+           lastName : "Doe",
+           id     : 5566,
+           fullName : function() {
+             return this.firstName + " " + this.lastName;
+           }
+         };
+         // Display data from the object:
+         document.getElementById("demo5").innerHTML = person.fullName();
+         </script>
+
+        <h2>JavaScript Objects</h2>
+
+        <p>If you access an object method without (), it will return the function definition:</p>
+
+        <p id="demo6"></p>
+
+        <script>
+        // Create an object:
+        var person = {
+        firstName: "John",
+        lastName : "Doe",
+        id     : 5566,
+        fullName : function() {
+            return this.firstName + " " + this.lastName;
+        }
+        };
+
+        // Display data from the object:
+        document.getElementById("demo6").innerHTML = person.fullName;
+        </script>
+
+        <p id="demo7"></p>
+
+        <script>
+        // Create an object:
+        var person = {
+        firstName: "John",
+        lastName: "Doe"
+        };
+
+        alert(
+        person.firstName
+        );
+
+        // Display data from the object:
+        document.getElementById("demo7").innerHTML = person.fullName;
+        </script>
+        
+        <script>
+//             let user = {     // an object
+//   name: "John",  // by key "name" store value "John"
+//   age: 30        // by key "age" store value 30
+// };
+        </script>
+        
+        <script>
+        let user = {
+            name: "John",
+            age: 30,
+            "likes birds": true  // multiword property name must be quoted
+        };
+        console.log( user.name ); // John
+        console.log( user.age ); // 30
+
+
+        </script>
+        <script>
+             let users = {};
+
+            // set
+            users["likes birds"] = true;
+
+            // get
+            console.log(users["likes birds"]); // true
+
+            // delete
+            delete users["likes birds"];
+
+            console.log(user["like birds"]);
+        </script>
+
+        <script>
+            let key = "likes birds";
+
+            // same as user["likes birds"] = true;
+            user[key] = true;
+            console.log(user[key]);
+            console.log(key);
+        </script>
+        <script>
+            let hero = {
+            name: "John",
+            age: 30
+            };
+
+            let keys = prompt("What do you want to know about the user?", "name");
+
+            // access by variable
+            alert( hero[keys] ); // John (if enter "name")
+
+            let lock = "name";
+            console.log( hero.lock ) // undefined
+        </script>
+        <script>
+            let fruit = prompt("Which fruit to buy?", "apple");
+
+            let bag = {
+            [fruit]: 5, // the name of the property is taken from the variable fruit
+            };
+
+            alert( bag.apple ); // 5 if fruit="apple"
+        </script>
+         <script>
+            let fruits = prompt("Which fruit to buy?", "orange");
+
+            let bags = {
+            [fruits]: 5, // the name of the property is taken from the variable fruits
+            };
+
+            console.log( bags.apple ); // undefined
+        </script>
+        <script>
+            let fruitjuice = prompt("Which fruit to buy?", "apple");
+            let bagy = {};
+
+            // take property name from the fruitjuice variable
+            bagy[fruitjuice] = 5;
+            console.log(fruitjuice);
+        </script>
+        <script>
+            let chocolate = 'perk';
+            let sack = {
+            [chocolate + 'Computers']: 5 // bag.appleComputers = 5
+            };
+            console.log(sack);
+            console.log(chocolate);
+        </script>
+        <script>
+            function make1User(name, age) {
+            return {
+                name: name,
+                age: age,
+                // ...other properties
+            };
+            }
+
+            let col = make1User("John", 30);
+            console.log(col.name); // John
+            console.log(col.age);
+        </script>
+        <script>
+            function make2User(name, age) {
+            return {
+                name, // same as name: name
+                age,  // same as age: age
+                // ...
+            };
+            }
+            let col1 = make2User("John", 30);
+            console.log(col1.name); // John
+            console.log(col1.age);
+        </script>
+        
+        <script>
+            // these properties are all right
+            let obj = {
+            for: 1,
+            let: 2,
+            return: 3
+            };
+
+            console.log( obj.for + obj.let + obj.return );  // 6
+        </script>
+
+        <script>
+            let objc = {
+            0: "test" // same as "0": "test"
+            };
+
+            // both alerts access the same property (the number 0 is converted to string "0")
+            console.log( objc["0"] ); // test
+            console.log( objc[0] ); // test (same property)
+        </script>
+
+        <!-- <script>
+            let objt = {};
+            objt.__proto__ = 5; // assign a number
+            console.log(objt.__proto__); // [object Object] - the value is an object, didn't work as intended
+        </script> -->
+
+        <!-- <script>
+            let user = {};
+
+            console.log( user.noSuchProperty === undefined ); // true means "no such property"
+        </script> -->
+        <script>
+            let user5 = { name: "John", age: 30 };
+         
+
+            let key5 = "age";
+            console.log( key5 in user ); // true, property "age" exists
+
+            console.log( "age" in user5 ); // true, user.age exists
+            console.log( "blabla" in user5); // false, user.blabla doesn't exist
+        </script>
+        <script>
+            let user6 = {
+            name: "John",
+            age: 30,
+            isAdmin: true
+            };
+
+            for (let key in user6) {
+            // keys
+            console.log( key );  // name, age, isAdmin
+            // values for the keys
+            console.log( user6[key] ); // John, 30, true
+            }
+        </script>
+
+<!-- let codes = {
+    "49": "Germany",
+    "41": "Switzerland",
+    "44": "Great Britain",
+    // ..,
+    "1": "USA"
+  };
+  
+  for (let code in codes) {
+    alert(code); // 1, 41, 44, 49
+  } -->
+        <script>
+            let user10 = {
+            name: "John",
+            surname: "Smith"
+            };
+            user10.age = 25; // add one more
+
+            // non-integer properties are listed in the creation order
+            for (let prop in user10) {
+            console.log( prop ); // name, surname, age
+            }
+        </script>
+
+<!-- let codes = {
+    "+49": "Germany",
+    "+41": "Switzerland",
+    "+44": "Great Britain",
+    // ..,
+    "+1": "USA"
+  };
+  
+  for (let code in codes) {
+    alert( +code ); // 49, 41, 44, 1
+  } -->
+        </body>
+</html>
