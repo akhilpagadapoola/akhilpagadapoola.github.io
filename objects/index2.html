@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <script>
+        // four variables are created and assigned in a single go,
+        // separated by commas
+        var myObj = new Object(),
+            str = 'myString',
+            rand = Math.random(),
+            obj = new Object();
+
+        myObj.type              = 'Dot syntax';
+        myObj['date created']   = 'String with space';
+        myObj[str]              = 'String value';
+        myObj[rand]             = 'Random Number';
+        myObj[obj]              = 'Object';
+        myObj['']               = 'Even an empty string';
+      
+        console.log(myObj);
+        console.log(str);
+        console.log(rand);
+        console.log(obj);
+    </script>
+    <script>
+        var propertyName = 'make';
+        var myCar1={}
+        myCar1[propertyName] = 'Ford';
+
+        propertyName = 'model';
+        myCar1[propertyName] = 'Mustang';
+        console.log(propertyName);
+        console.log(myCar1);
+        
+     
+    </script>
+    <script>
+        function showProps(obj, objName) {
+        var result = ``;
+        for (var i in obj) {
+            // obj.hasOwnProperty() is used to filter out properties from the object's prototype chain
+            if (obj.hasOwnProperty(i)) {
+            result += `${objName}.${i} = ${obj[i]}\n`;
+            }
+        }
+        return result;
+        }
+        
+        console.log(myCar1.make);
+        console.log(myCar1.logo);
+    </script>
+    <!-- function listAllProperties(o) {
+        var objectToInspect;
+        var result = [];
+    
+        for(objectToInspect = o; objectToInspect !== null;
+               objectToInspect = Object.getPrototypeOf(objectToInspect)) {
+            result = result.concat(
+                Object.getOwnPropertyNames(objectToInspect)
+            );
+        }
+    
+        return result;
+    } -->
+
+    <!-- objectName.propertyName -->
+    <!-- var myCar = new Object();
+    myCar.make = 'Ford';
+    myCar.model = 'Mustang';
+    myCar.year = 1969; -->
+    <!-- var myCar = {
+        make: 'Ford',
+        model: 'Mustang',
+        year: 1969
+    }; -->
+    <script>
+        function Car(make, model, year) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        }
+    
+        console.log(Car);
+    </script>
+
+    <script>
+        function Car(make, model, year) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        }
+
+        var mycar = new Car('Eagle', 'Talon TSi', 1993);
+        console.log(mycar.make);
+        console.log(mycar.year);
+        var kenscar = new Car('Nissan', '300ZX', 1992);
+        var vpgscar = new Car('Mazda', 'Miata', 1990);
+
+        console.log(kenscar);
+        console.log(Car);
+
+    </script>
+    <!-- <script>
+        function Car2(make, model, year, owner) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.owner = owner;
+        }
+
+        var car1= new Car2('Eagle', 'Talon TSi', 1993, rand);
+        var car2 = new Car2('Nissan', '300ZX', 1992, kene);
+        console.log(car2.owner.name);
+    </script> -->
+    <!-- <script>
+        // Animal properties and method encapsulation
+        var Animal = {
+        type: 'Invertebrates', // Default value of properties
+        displayType: function() {  // Method which will display type of Animal
+            console.log(this.type);
+        }
+        };
+
+        // Create new animal type called animal1
+        var animal1 = Object.create(Animal);
+        animal1.displayType(); // Output:Invertebrates
+
+        // Create new animal type called Fishes
+        var fish = Object.create(Animal);
+        fish.type = 'Fishes';
+        fish.displayType(); // Output:Fishes
+
+    </script> -->
+    <script>
+      
+//       function displayCar() {
+//   var result = `A Beautiful ${this.year} ${this.make} ${this.model}`;
+//   pretty_print(result);
+// }
+// this.displayCar = displayCar;
+// function Car(make, model, year, owner) {
+//   this.make = make;
+//   this.model = model;
+//   this.year = year;
+//   this.owner = owner;
+//   this.displayCar = displayCar;
+// }
+// car1.displayCar();
+// car2.displayCar();
+    </script>
+    <script>
+        const Manager = {
+        name: "John",
+        age: 27,
+        job: "Software Engineer"
+        }
+        const Intern= {
+        name: "Ben",
+        age: 21,
+        job: "Software Engineer Intern"
+        }
+
+        function sayHi() {
+            console.log('Hello, my name is', this.name)
+        }
+
+        // add sayHi function to both objects
+        Manager.sayHi = sayHi;
+        Intern.sayHi = sayHi;
+
+        Manager.sayHi() // Hello, my name is John'
+        Intern.sayHi() // Hello, my name is Ben'
+    </script>
+    <script>
+        function howOldAmI (){
+        console.log('I am ' + this.age + ' years old.')
+        }
+        Manager.howOldAmI = howOldAmI;
+        Manager.howOldAmI() // I am 27 years old.
+    </script>
+    <script>
+        var o = {
+        a: 7,
+        get b() {
+            return this.a + 1;
+        },
+        set c(x) {
+            this.a = x / 2;
+        }
+        };
+
+        console.log(o.a); 
+        console.log(o.b); 
+        o.c = 100;         
+        console.log(o.a); 
+    </script>
+    <script>
+        var o = { a: 0 };
+
+        Object.defineProperties(o, {
+            'b': { get: function() { return this.a + 1; } },
+            'c': { set: function(x) { this.a = x / 2; } }
+        });
+
+        o.c = 10; // Runs the setter, which assigns 10 / 2 (5) to the 'a' property
+        console.log(o.b); // Runs the getter, which yields a + 1 or 6
+    </script>
+    <script>
+        // Creates a new object, myobj, with two properties, a and b.
+        var myobj = new Object;
+        myobj.a = 5;
+        myobj.b = 12;
+        myobj.g = 16;
+
+        // Removes the a property, leaving myobj with only the b property.
+        delete myobj.a;
+        console.log ('a' in myobj); 
+      
+        delete myobj.g;
+        console.log('g' in myobj);
+    </script>
+    <script>
+        // Two variables, two distinct objects with the same properties
+        var fruit = {name: 'apple'};
+        var fruitbear = {name: 'apple'};
+
+        fruit == fruitbear; // return false
+        fruit === fruitbear; // return false
+    </script>
+    <script>
+        // Two variables, a single object
+        var fruit = {name: 'apple'};
+        var fruitbear = fruit; 
+
+        fruit == fruitbear; 
+        fruit === fruitbear; 
+
+        fruit.name = 'grape';
+        console.log(fruitbear); 
+    </script>
+        </body>
+
+</html>
