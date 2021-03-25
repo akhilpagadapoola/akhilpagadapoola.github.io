@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>revision</title>
+</head>
+<body>
+    <script>
+         let fruits = ["Apple", "Orange", "Plum"];
+        alert( fruits[0] ); // Apple
+        alert( fruits[1] ); // Orange
+        alert( fruits[2] ); // Plum
+    </script>
+    <script>
+
+        alert( `hello ${1}` ); // ?
+
+        alert( `hello ${"name"}` ); // ?
+
+        alert( `hello ${hero}` ); // ?
+    </script>
+    <script>
+             let a1 = ['a', 'b', 'c']
+                    let a2 = a1.map(function(item) { return item.toUpperCase() })
+                    alert(a2); // logs ['A', 'B', 'C']
+
+                    let a3 = ['a', 10, 'b', 20, 'c', 30]
+                    let a4 = a3.filter(function(item) { return typeof item === 'number'; })
+                    alert(a4);  // logs [10, 20, 30]
+
+    </script>
+    <script>
+
+        let allow = ['first', 'second', , 'fourth']
+
+        allow.forEach(function(element) {
+        alert(element);
+        })
+        // first
+        // second
+        // fourth
+
+        if (allow[2] === undefined) {
+        alert('array[2] is undefined');  // true
+        }
+
+
+
+        half = ['first', 'second', undefined, 'fourth']
+
+        half.forEach(function(element) {
+        alert(element);
+        })
+        // first
+        // second
+        // undefined
+        // fourth
+    </script>
+    <script>
+          let a = ['a', 'b', 'a', 'b', 'a']
+                    alert(a.indexOf('b'));     // logs 1
+
+                    // Now try again, starting from after the last match
+                    alert(a.indexOf('b', 2));  // logs 3
+                    alert(a.indexOf('z'));     // logs -1, because 'z' was not found
+
+
+                    let b = ['a', 'b', 'c', 'd', 'a', 'b']
+                    alert(b.lastIndexOf('b'));     // logs 5
+
+                    // Now try again, starting from before the last match
+                    alert(b.lastIndexOf('b', 4));  // logs 1
+                    alert(b.lastIndexOf('z'));     // logs -1
+    </script>
+        <p id="demo"></p>
+
+        <script>
+        // Create an object:
+        var person = {
+        firstName: "John",
+        lastName: "Doe"
+        };
+
+        alert(
+        person.firstName
+        );
+
+        // Display data from the object:
+        document.getElementById("demo").innerHTML = person.fullName;
+        </script>
+        <script>
+                // four variables are created and assigned in a single go,
+                // separated by commas
+                var myObj = new Object(),
+                    str = 'myString',
+                    rand = Math.random(),
+                    obj = new Object();
+        
+                myObj.type              = 'Dot syntax';
+                myObj['date created']   = 'String with space';
+                myObj[str]              = 'String value';
+                myObj[rand]             = 'Random Number';
+                myObj[obj]              = 'Object';
+                myObj['']               = 'Even an empty string';
+              
+                console.log(myObj);
+                console.log(str);
+                console.log(rand);
+                console.log(obj);
+        </script>
+         <script>
+            var propertyName = 'make';
+            var myCar1={}
+            myCar1[propertyName] = 'Ford';
+    
+            propertyName = 'model';
+            myCar1[propertyName] = 'Mustang';
+            console.log(propertyName);
+            console.log(myCar1);
+            
+         
+        </script>
+        <script>
+            function showProps(obj, objName) {
+            var result = ``;
+            for (var i in obj) {
+                // obj.hasOwnProperty() is used to filter out properties from the object's prototype chain
+                if (obj.hasOwnProperty(i)) {
+                result += `${objName}.${i} = ${obj[i]}\n`;
+                }
+            }
+            return result;
+            }
+            
+            console.log(myCar1.make);
+            console.log(myCar1.logo);
+        </script>
+        <script>
+            const Manager = {
+            name: "John",
+            age: 27,
+            job: "Software Engineer"
+            }
+            const Intern= {
+            name: "Ben",
+            age: 21,
+            job: "Software Engineer Intern"
+            }
+    
+            function sayHi() {
+                console.log('Hello, my name is', this.name)
+            }
+    
+            // add sayHi function to both objects
+            Manager.sayHi = sayHi;
+            Intern.sayHi = sayHi;
+    
+            Manager.sayHi() // Hello, my name is John'
+            Intern.sayHi() // Hello, my name is Ben'
+        </script>
+        <script>
+            function howOldAmI (){
+            console.log('I am ' + this.age + ' years old.')
+            }
+            Manager.howOldAmI = howOldAmI;
+            Manager.howOldAmI() // I am 27 years old.
+        </script>
+        <script>
+            var o = {
+            a: 7,
+            get b() {
+                return this.a + 1;
+            },
+            set c(x) {
+                this.a = x / 2;
+            }
+            };
+    
+            console.log(o.a); 
+            console.log(o.b); 
+            o.c = 100;         
+            console.log(o.a); 
+        </script>
+        <script>
+            var o = { a: 0 };
+    
+            Object.defineProperties(o, {
+                'b': { get: function() { return this.a + 1; } },
+                'c': { set: function(x) { this.a = x / 2; } }
+            });
+    
+            o.c = 10; // Runs the setter, which assigns 10 / 2 (5) to the 'a' property
+            console.log(o.b); // Runs the getter, which yields a + 1 or 6
+        </script>
+        <script>
+            // Creates a new object, myobj, with two properties, a and b.
+            var myobj = new Object;
+            myobj.a = 5;
+            myobj.b = 12;
+            myobj.g = 16;
+    
+            // Removes the a property, leaving myobj with only the b property.
+            delete myobj.a;
+            console.log ('a' in myobj); 
+          
+            delete myobj.g;
+            console.log('g' in myobj);
+        </script>
+</body>
+</html>
