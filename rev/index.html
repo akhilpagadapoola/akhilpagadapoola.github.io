@@ -1,0 +1,74 @@
+function displayCar1(make, model, year){
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    
+    var result = `A Beautiful ${this.make} ${this.model} ${this.year}`;
+    console.log(result);
+}
+
+displayCar1("hundai","vernaa",2000);
+
+function displayCar1(make, model, year){
+     var result = "A beatuful "+ "make:"+make + "  model:"+model + "  year:"+year;
+    console.log(result);
+}
+displayCar1("bnm","456",1999);
+
+var a61 = [2, 45, 65, 754, 8767, 9898];
+
+function myArrayMin(arr) {
+    var len = arr.length;
+    var min = Infinity;
+    while (len--) {
+        if (arr[len] < min) {
+            min = arr[len];
+        }
+    }
+    return min;
+};
+console.log(myArrayMax(a61));
+
+var f1 = [1, 45, 34, 23, 7, 8, 65];
+var f2 = f1.filter((value, index, array) => {
+    return value < 20;
+}
+);
+
+
+console.log(f2);
+
+var a = [2, 45, 65, 754, 8767, 9898];
+
+function myArrayMax(arr) {
+    var len = arr.length;
+    var max = -Infinity;
+    while (len--) {
+        if (arr[len] > max) {
+            max = arr[len];
+        }
+    }
+    return max;
+};
+console.log(myArrayMax(a));
+
+let color02 = [
+  [1,2,3],
+	[2,3,4],
+	[2,6,7]
+];
+
+for(i in color02){
+	for(j in color02[i]){
+		console.log(color02[i][j]);
+	};
+}
+
+
+function emp(id, name, salary) {
+    this.id = id;
+    this.name = name;
+    this.salary = salary;
+};
+employ = new emp(103, 'naveen', 5000);
+console.log(employ.id + " " + employ.name + " " + employ.salary);
