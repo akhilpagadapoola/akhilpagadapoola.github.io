@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpandOperators</title>
+</head>
+<body>
+<!-- Assign values to variables and add them together: -->
+    <h2>JavaScript Operators</h2>
+
+    <p>x = 5, y = 2, calculate z = x + y, and display z:</p>
+    
+    <p id="demo"></p>
+    
+    <script>
+    var x = 5;
+    var y = 2;
+    var z = x + y;
+    document.getElementById("demo").innerHTML = z;
+    </script>
+
+<!-- The assignment operator (=) assigns a value to a variable. -->
+    <h2>The = Operator</h2>
+
+    <p id="demo1"></p>
+
+    <script>
+    var x = 10;
+    document.getElementById("demo1").innerHTML = x;
+    </script>
+<!-- The addition operator (+) adds numbers: -->
+
+        
+    <h2>The + Operator</h2>
+
+    <p id="demo2"></p>
+
+    <script>
+    var x = 25;
+    var y = 25;
+    var z = x + y;
+    document.getElementById("demo2").innerHTML = z;
+    </script>
+<!-- The multiplication operator (*) multiplies numbers. -->
+    <h2>The * Operator</h2>
+
+    <p id="demo3"></p>
+
+    <script>
+    var x = 5;
+    var y = 2;
+    var z = x * y;
+    document.getElementById("demo3").innerHTML = z;
+    </script>
+
+<!-- 
+Assignment operators assign values to JavaScript variables.
+
+Operator	Example	Same As
+=	x = y	x = y
++=	x += y	x = x + y
+-=	x -= y	x = x - y
+*=	x *= y	x = x * y
+/=	x /= y	x = x / y
+%=	x %= y	x = x % y
+**=	x **= y	x = x ** y -->
+
+
+    <h2>The += Operator</h2>
+
+    <p id="demo4"></p>
+
+    <script>
+    var x = 10;
+    x += 5;
+    document.getElementById("demo4").innerHTML = x;
+    </script>
+<!-- JavaScript String Operators -->
+    <h2>JavaScript Operators</h2>
+
+    <p>The + operator concatenates (adds) strings.</p>
+
+    <p id="demo5"></p>
+
+    <script>
+    var txt1 = "John";
+    var txt2 = "Doe";
+    document.getElementById("demo5").innerHTML = txt1 + " " + txt2;
+    </script>
+<!-- The += assignment operator can also be used to add (concatenate) strings: -->
+<!-- When used on strings, the + operator is called the concatenation operator. -->
+
+    <h2>JavaScript Operators</h2>
+
+    <p>The assignment operator += can concatenate strings.</p>
+
+    <p id="demo6"></p>
+
+    <script>
+    txt1 = "What a very ";
+    txt1 += "nice day";
+    document.getElementById("demo6").innerHTML = txt1;
+    </script>
+<!-- Adding Strings and Numbers -->
+
+
+    <h2>JavaScript Operators</h2>
+
+    <p>Adding a number and a string, returns a string.</p>
+
+    <p id="demo7"></p>
+
+    <script>
+    var x = 5 + 5;
+    var y = 5 + "5";
+    var z = "Hello" + 5;
+    document.getElementById("demo7").innerHTML =
+    x + "<br>" + y + "<br>" + z;
+    </script>
+<!-- JavaScript Comparison Operators -->
+<!-- Operator	Description
+==	equal to
+===	equal value and equal type
+!=	not equal
+!==	not equal value or not equal type
+>	greater than
+<	less than
+>=	greater than or equal to
+<=	less than or equal to
+?	ternary operator -->
+
+<!-- 
+JavaScript Logical Operators
+
+Operator	Description
+&&	logical and
+||	logical or
+!	logical not -->
+
+<!-- JavaScript Type Operators
+Operator	Description
+typeof	Returns the type of a variable
+instanceof	Returns true if an object is an instance of an object type -->
+
+<!-- Arithmetic operators are used to perform arithmetic on numbers:
+
+Operator	Description
++	Addition
+-	Subtraction
+*	Multiplication
+**	Exponentiation (ES2016)
+/	Division
+%	Modulus (Division Remainder)
+++	Increment
+--	Decrement -->
+    <p>A typical arithmetic operation takes two numbers and produces a new number.</p>
+
+    <p id="demo8"></p>
+
+    <script>
+    var x = 100 + 50;
+    document.getElementById("demo8").innerHTML = x;
+    </script>
+
+
+    <p>A typical arithmetic operation takes two numbers (or variables) and produces a new number.</p>
+
+    <p id="demo9"></p>
+
+    <script>
+    var a = 100;
+    var b = 50;
+    var x = a + b;
+    document.getElementById("demo9").innerHTML = x;
+    </script>
+
+    <p>A typical arithmetic operation takes two numbers (or expressions) and produces a new number.</p>
+
+    <p id="demo10"></p>
+
+    <script>
+    var a = 3;
+    var x = (100 + 50) * a;
+    document.getElementById("demo10").innerHTML = x;
+    </script>
+<!-- // Adding -->
+
+    <h2>The + Operator</h2>
+
+    <p id="demo10"></p>
+
+    <script>
+    var x = 5;
+    var y = 2;
+    var z = x + y;
+    document.getElementById("demo10").innerHTML = z;
+    </script>
+<!-- Subtracting -->
+    <h2>The - Operator</h2>
+
+    <p id="demo11"></p>
+
+    <script>
+    var x = 5;
+    var y = 2;
+    var z = x - y;
+    document.getElementById("demo11").innerHTML = z;
+    </script>
+<!-- Multiplying -->
+
+    <h2>The * Operator</h2>
+
+    <p id="demo12"></p>
+
+    <script>
+    var x = 5;
+    var y = 2;
+    var z = x * y;
+    document.getElementById("demo12").innerHTML = z;
+    </script>
+    
+    
+    <!-- Dividing -->
+    <h2>The / Operator</h2>
+
+    <p id="demo13"></p>
+    
+    <script>
+    var x = 5;
+    var y = 2;
+    var z = x / y;
+    document.getElementById("demo13").innerHTML = z;
+    </script>
+<!-- Remainder -->
+    <h2>The % Operator</h2>
+
+    <p id="demo14"></p>
+
+    <script>
+    var x = 5;
+    var y = 2;
+    var z = x % y;
+    document.getElementById("demo14").innerHTML = z;
+    </script>
+    <!-- Incrementing -->
+
+    <h2>The ++ Operator</h2>
+
+    <p id="demo15"></p>
+
+    <script>
+    var x = 5;
+    x++;
+    var z = x;
+    document.getElementById("demo15").innerHTML = z;
+    </script>
+    <!-- Decrementing -->
+    <h2>The -- Operator</h2>
+
+    <p id="demo16"></p>
+    
+    <script>
+    var x = 5;
+    x--;
+    var z = x;
+    document.getElementById("demo16").innerHTML = z;
+    </script>
+    <!-- Exponentiation -->
+    <h2>The ** Operator</h2>
+
+    <p id="demo17"></p>
+
+    <script>
+    var x = 5;
+    document.getElementById("demo17").innerHTML = x ** 2;
+    </script>
+    <!-- Operator Precedence -->
+    <p>Multiplication has precedence over addition.</p>
+
+    <p id="demo18"></p>
+    
+    <script>
+    document.getElementById("demo18").innerHTML = 100 + 50 * 3;
+    </script>
+
+    <p>Multiplication has precedence over addition.</p>
+    <p>But parenthesis has precedence over multiplication.</p>
+
+    <p id="demo19"></p>
+
+    <script>
+    document.getElementById("demo19").innerHTML = (100 + 50) * 3;
+    </script>
+
+    <p>When many operations has the same precedence, they are computed from left to right.</p>
+
+    <p id="demo20"></p>
+
+    <script>
+    document.getElementById("demo20").innerHTML = 100 + 50 - 3;
+    </script>
+
+<!-- JavaScript Operator Precedence Values
+    Value	Operator	Description	Example
+    20	( )	Expression grouping	(3 + 4)
+                
+    19	.	Member	person.name
+    19	[]	Member	person["name"]
+    19	()	Function call	myFunction()
+    19	new	Create	new Date()
+                
+    17	++	Postfix Increment	i++
+    17	--	Postfix Decrement	i--
+                
+    16	++	Prefix Increment	++i
+    16	--	Prefix Decrement	--i
+    16	!	Logical not	!(x==y)
+    16	typeof	Type	typeof x
+                
+    15	**	Exponentiation (ES2016)	10 ** 2
+                
+    14	*	Multiplication	10 * 5
+    14	/	Division	10 / 5
+    14	%	Division Remainder	10 % 5
+                
+    13	+	Addition	10 + 5
+    13	-	Subtraction	10 - 5
+                
+    12	<<	Shift left	x << 2
+    12	>>	Shift right	x >> 2
+    12	>>>	Shift right (unsigned)	x >>> 2
+                
+    11	<	Less than	x < y 
+    11	<=	Less than or equal	x <= y
+    11	>	Greater than	x > y
+    11	>=	Greater than or equal	x >= y
+    11	in	Property in Object	"PI" in Math
+    11	instanceof	Instance of Object	instanceof Array
+                
+    10	==	Equal	x == y
+    10	===	Strict equal	x === y
+    10	!=	Unequal	x != y
+    10	!==	Strict unequal	x !== y
+                
+    9	&	Bitwise AND	x & y
+    8	^	Bitwise XOR	x ^ y
+    7	|	Bitwise OR	x | y
+    6	&&	Logical AND	x && y
+    5	||	Logical OR	x || y
+    4	? :	Condition	? "Yes" : "No"
+                
+    3	+=	Assignment	x += y
+    3	/=	Assignment	x /= y
+    3	-=	Assignment	x -= y
+    3	*=	Assignment	x *= y
+    3	%=	Assignment	x %= y
+    3	<<=	Assignment	x <<= y
+    3	>>=	Assignment	x >>= y
+    3	>>>=	Assignment	x >>>= y
+    3	&=	Assignment	x &= y
+    3	^=	Assignment	x ^= y
+    3	|=	Assignment	x |= y
+                
+    2	yield	Pause Function	yield x
+    1	,	Comma	5 , 6 -->
+
+    <h2>The -= Operator</h2>
+
+    <p id="demo21"></p>
+
+    <script>
+    var x = 10;
+    x -= 5;
+    document.getElementById("demo21").innerHTML = x;
+    </script>
+    <h2>The *= Operator</h2>
+
+    <p id="demo22"></p>
+    
+    <script>
+    var x = 10;
+    x *= 5;
+    document.getElementById("demo22").innerHTML = x;
+    </script>
+
+    <h2>The %= Operator</h2>
+
+    <p id="demo23"></p>
+
+    <script>
+    var x = 10;
+    x %= 5;
+    document.getElementById("demo23").innerHTML = x;
+    </script>
+    <script>
+        let a1 = 1;
+        let b1 = 0;
+
+        a1 &&= 2;
+        console.log(a1);
+        // expected output: 2
+
+        b1 &&= 2;
+        console.log(b1);
+        // expected output: 0
+    </script>
+
+</body>
+</html>
