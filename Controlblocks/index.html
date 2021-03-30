@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controlblocks</title>
+</head>
+<body>
+  <script>
+    var age=11;
+    // age = Number(age);
+  if (isNaN(age)) {
+    voteable = "Input is not a number";
+    console.log(voteable);
+  } else {
+    voteable = (age < 18) ? "Too young" : "Old enough";
+    console.log(voteable);
+  }
+  </script>
+  
+  <script>
+    let clock =19;
+    
+    if (clock < 18) {
+        greeting = "Good day ";
+        console.log(greeting);
+    } else {
+        greeting ="Good evening";
+        console.log(greeting);
+    }
+  </script>
+  <script>
+        let time= 25;
+        if (time < 10) {
+          greeting = "Good morning";
+          console.log(greeting);
+        } else if (time < 20) {
+          greeting = "Good day";
+          console.log(greeting);
+        } else {
+          greeting = "Good evening";
+          console.log(greeting);
+        }
+
+  </script>
+  <script>
+    let year = prompt('Year', '');
+  
+    if (year < 2015) {
+      console.log( 'Too early...' );
+    } else if (year > 2015) {
+      console.log( 'Too late' );
+    } else {
+      console.log( 'Exactly!' );
+    }
+  </script>
+    <!-- “for” loop -->
+  <script>
+    
+  for (let i = 0; i < 3; i++) { // shows 0, then 1, then 2
+    console.log(i);
+  }
+
+  </script>
+
+
+  <script>
+  var text = "";
+  var i = 0;
+  while (i < 10) {
+    text += "<br>The number is " + i;
+    i++;
+  }
+  console.log(text);
+  </script>
+
+  
+   <!-- “do…while” loop -->
+  <script>
+
+    let z = 0;
+    do {
+      console.log( z );
+      z++;
+    } while (z < 3);
+  </script>
+  <script>
+    var text1 = ""
+    var i = 20;
+  
+    do {
+      text1 += "<br>The number is " + i;
+      i++;
+    }
+    while (i < 10); 
+    console.log(text1);
+  </script>
+
+
+
+  <script>
+    
+    fruittype = "Bananas";
+
+    switch (fruittype) {
+      case 'Oranges':
+        console.log('Oranges are $0.59 a pound.');
+        break;
+      case 'Apples':
+        console.log('Apples are $0.32 a pound.');
+        break;
+      case 'Bananas':
+        console.log('Bananas are $0.48 a pound.');
+        break;
+      case 'Cherries':
+        console.log('Cherries are $3.00 a pound.');
+        break;
+      case 'Mangoes':
+        console.log('Mangoes are $0.56 a pound.');
+        break;
+      case 'Papayas':
+        console.log('Mangoes and papayas are $2.79 a pound.');
+        break;
+      default:
+      console.log(`Sorry, we are out of ${fruittype}.`);
+    }
+    console.log("Is there anything else you'd like?");
+  </script>
+  <script>
+     
+
+    let a = 2 + 2;
+
+    switch (a) {
+      case 3:
+        console.log( 'Too small' );
+        break;
+      case 4:
+        console.log( 'Exactly!' );
+        break;
+      case 5:
+        console.log( 'Too big' );
+        break;
+      default:
+        console.log( "I don't know such values" );
+    }
+
+  </script>
+  <script>
+
+    let a1 = 2 + 2;
+    switch (a1) {
+      case 3:
+        console.log( 'Too small' );
+      case 4:
+        console.log( 'Exactly!' );
+      case 5:
+        console.log( 'Too big' );
+      default:
+        console.log( "I don't know such values" );
+    }
+
+  </script>
+  <script>
+
+    switch (new Date().getDay()) {
+      case 0:
+        day = "Sunday";
+        console.log(day);
+        break;
+      case 1:
+        day = "Monday";
+        console.log(day);
+        break;
+      case 2:
+        day = "Tuesday";
+        console.log(day);
+        break;
+      case 3:
+        day = "Wednesday";
+        console.log(day);
+        break;
+      case 4:
+        day = "Thursday";
+        console.log(day);
+        break;
+      case 5:
+        day = "Friday";
+        console.log(day);
+        break;
+      case 6:
+        day = "Saturday";
+        console.log(day);
+    }
+  </script>
+  <script>
+
+      switch (new Date().getDay()) {
+      case 6:
+        text = "Today is Saturday";
+        console.log(text);
+        break;
+      case 0:
+        text = "Today is Sunday";
+        console.log(text);
+        break;
+      default:
+        text = "Looking forward to the Weekend";
+        console.log(text);
+    }
+
+  </script>
+  <script>
+
+    switch (new Date().getDay()) {
+      default:
+        text = "Looking forward to the Weekend";
+        console.log(text);
+        break;
+      case 6:
+        text = "Today is Saturday";
+        console.log(text);
+        break;
+      case 0:
+        text = "Today is Sunday";
+        console.log(text);
+    }
+  </script>
+  <script>
+
+    switch (new Date().getDay()) {
+      case 4:
+      case 5:
+        text = "Soon it is Weekend";
+        console.log(text);
+        break;
+      case 0:
+      case 6:
+        text = "It is Weekend";
+        console.log(text);
+        break;
+      default:
+        text = "Looking forward to the Weekend";
+        console.log(text);
+    }
+  </script>
+ <!-- Strict Comparison -->
+<script>
+  var x = "0";
+switch (x) {
+  case 0:
+    text = "Off";
+    break;
+  case 1:
+    text = "On";
+    break;
+  default:
+    text = "No value found";
+}
+</script>
+<!-- Grouping of “case” -->
+<script>
+  let a5 = 3;
+
+  switch (a5) {
+    case 4:
+      console.log('Right!');
+      break;
+
+    case 3: // (*) grouped two cases
+    case 5:
+      console.log('Wrong!');
+      console.log("Why don't you take a math class?");
+      break;
+
+    default:
+      console.log('The result is strange. Really.');
+  }
+</script>
+<!-- 
+ Break -->
+
+<script>
+  var text = "";
+  var i;
+  for (i = 0; i < 10; i++) {
+    if (i === 3) { break; }
+    text += "The number is " + i + "<br>";
+  }
+  console.log(text);
+</script>
+
+<script>
+  sum= 0;
+
+  while (true) {
+    let value = +prompt("Enter a number", '');
+    if (!value) break; // (*)
+    sum += value;
+  }
+console.log( 'Sum: ' + sum );
+</script>
+<!-- Continue -->
+<script>
+  var text = "";
+  var i;
+  for (i = 0; i < 10; i++) {
+    if (i === 3) { continue; }
+    text += "The number is " + i + "<br>";
+  }
+  console.log(text);
+</script>
+
+  <!-- today = "tuesday";
+
+    switch (today) {
+      case 'sunday':
+        console.log('Oranges are $0.59 a pound.');
+        break;
+      case 'monday':
+        console.log('Apples are $0.32 a pound.');
+        break;
+      case 'tuesday':
+        console.log('Bananas are $0.48 a pound.');
+        break;
+      case 'wednesday':
+        console.log('Cherries are $3.00 a pound.');
+        break;
+      case 'thurday':
+        console.log('Mangoes are $0.56 a pound.');
+        break;
+      case 'saturday':
+        console.log('Mangoes and papayas are $2.79 a pound.');
+        break;
+      default:
+      console.log(`Sorry, we are out of ${fruittype}.`);
+    } -->
+    <!-- switch (i=0,i<7,i++) {
+      case 0:
+        day = "Sunday";
+        console.log(day);
+        break;
+      case 1:
+        day = "Monday";
+        console.log(day);
+        break;
+      case 2:
+        day = "Tuesday";
+        console.log(day);
+        break;
+      case 3:
+        day = "Wednesday";
+        console.log(day);
+        break;
+      case 4:
+        day = "Thursday";
+        console.log(day);
+        break;
+      case 5:
+        day = "Friday";
+        console.log(day);
+        break;
+      case 6:
+        day = "Saturday";
+        console.log(day);
+    } -->
+
+
+    <!-- let arg = prompt("Enter a value?");
+switch (arg) {
+  case '0':
+  case '1':
+    alert( 'One or zero' );
+    break;
+
+  case '2':
+    alert( 'Two' );
+    break;
+
+  case 3:
+    alert( 'Never executes!' );
+    break;
+  default:
+    alert( 'An unknown value' );
+} -->
+<!-- 
+
+let a = "1";
+let b = 0;
+
+switch (+a) {
+  case b + 1:
+    alert("this runs, because +a is 1, exactly equals b+1");
+    break;
+
+  default:
+    alert("this doesn't run");
+} -->
+
+
+<!-- 
+<script>
+  var cars = ["BMW", "Volvo", "Saab", "Ford"];
+  var i = 0;
+  var textx = "";
+  for (;cars[i];) {
+    textx += cars[i] + "<br>";
+    i++;
+  }
+  console.log(textx);
+
+</script>
+<script>
+  var cars = ["BMW", "Volvo", "Saab", "Ford"];
+  var i = 0;
+  var textz = "";
+
+  while (cars[i]) {
+    textz += cars[i] + "<br>";
+    i++;
+  }
+  console.log(textz);
+</script> -->
+<!-- 
+<script>
+  for (let i = 0; i < 10; i++) {
+
+// if true, skip the remaining part of the body
+if (i % 2 == 0) break;
+
+alert(i); // 1, then 3, 5, 7, 9
+}
+</script> -->
+<!-- <script>
+  var  name = ["string", "a", "b"]
+  for (let i = 0; i < name.length; i++) {
+
+// if true, skip the remaining part of the body
+if (i % 2 == 0) continue;
+
+console.log(name[i]); // 1, then 3, 5, 7, 9
+}
+</script> -->
+</body>
+</html>
