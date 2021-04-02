@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML DOM</title>
+</head>
+<body>
+    <p id="demo"></p>
+
+    <script>
+    document.getElementById("demo").innerHTML = "Hello World!";
+    </script>
+<!-- 
+Finding HTML Elements -->
+    <!-- document.getElementById(id)	Find an element by element id
+    document.getElementsByTagName(name)	Find elements by tag name
+    document.getElementsByClassName(name)	Find elements by class name -->
+
+<!-- Changing HTML Elements
+
+    Property	Description
+    element.innerHTML =  new html content	Change the inner HTML of an element
+    element.attribute = new value	Change the attribute value of an HTML element
+    element.style.property = new style	Change the style of an HTML element
+    Method	Description
+    element.setAttribute(attribute, value)	Change the attribute value of an HTML element -->
+
+<!-- Adding and Deleting Elements
+
+    document.createElement(element)	Create an HTML element
+    document.removeChild(element)	Remove an HTML element
+    document.appendChild(element)	Add an HTML element
+    document.replaceChild(new, old)	Replace an HTML element
+    document.write(text)	Write into the HTML output stream -->
+<!-- 
+Adding Events Handlers
+    document.getElementById(id).onclick = function(){code}	Adding event handler code to an onclick event -->
+    <h2>Finding HTML Elements by Id</h2>
+
+    <p id="intro">Hello World!</p>
+    <p>This example demonstrates the <b>getElementsById</b> method.</p>
+
+    <p id="demo1"></p>
+
+    <script>
+    var myElement = document.getElementById("intro");
+    document.getElementById("demo1").innerHTML = 
+    "The text from the intro paragraph is " + myElement.innerHTML;
+</script>
+
+    <h2>Finding HTML Elements by Tag Name</h2>
+
+    <p>Hello World!</p>
+    <p>This example demonstrates the <b>getElementsByTagName</b> method.</p>
+
+    <p id="demo2"></p>
+
+    <script>
+    var x = document.getElementsByTagName("p");
+    document.getElementById("demo2").innerHTML = 
+    'The text in first paragraph (index 0) is: ' + x[0].innerHTML;
+    </script>
+
+
+    <h2>Finding HTML Elements by Tag Name</h2>
+
+    <div id="main">
+    <p>The DOM is very useful.</p>
+    <p>This example demonstrates the <b>getElementsByTagName</b> method.</p>
+    </div>
+
+    <p id="demo3"></p>
+
+    <script>
+    var x = document.getElementById("main");
+    var y = x.getElementsByTagName("p");
+    document.getElementById("demo3").innerHTML = 
+    'The first paragraph (index 0) inside "main" is: ' + y[0].innerHTML;
+    </script>
+
+    <h2>Finding HTML Elements by Class Name</h2>
+
+    <p>Hello World!</p>
+
+    <p class="intro">The DOM is very useful.</p>
+    <p class="intro">This example demonstrates the <b>getElementsByClassName</b> method.</p>
+
+    <p id="demo4"></p>
+
+    <script>
+    var x = document.getElementsByClassName("intro");
+    document.getElementById("demo4").innerHTML = 
+    'The first paragraph (index 0) with class="intro": ' + x[0].innerHTML;
+    </script>
+
+    <h2>Finding HTML Elements by Query Selector</h2>
+
+    <p>Hello World!</p>
+
+    <p class="intro">The DOM is very useful.</p>
+    <p class="intro">This example demonstrates the <b>querySelectorAll</b> method.</p>
+
+    <p id="demo5"></p>
+
+    <script>
+    var x = document.querySelectorAll("p.intro");
+    document.getElementById("demo5").innerHTML = 
+    'The first paragraph (index 0) with class="intro": ' + x[1].innerHTML;
+    </script>
+    
+
+
+    <h2>Finding HTML Elements Using document.forms</h2>
+
+    <form id="frm1" action="/action_page.php">
+    First name: <input type="text" name="fname" value="Donald"><br>
+    Last name: <input type="text" name="lname" value="Duck"><br><br>
+    <input type="submit" value="Submit">
+    </form> 
+
+    <p>Click "Try it" to display the value of each element in the form.</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo6"></p>
+
+    <script>
+    function myFunction() {
+    var x = document.forms["frm1"];
+    var text = "";
+    var i;
+    for (i = 0; i < x.length ;i++) {
+        text += x.elements[i].value + "<br>";
+    }
+    document.getElementById("demo6").innerHTML = text;
+    }
+    </script>
+
+
+</body>
+</html>
