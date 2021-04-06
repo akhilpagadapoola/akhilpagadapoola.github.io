@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+        <h2>Simple calculator</h2>
+        <label for="input">Input1</label>
+        <input type="text" name="num-one" id="num-one">
+        <label for="input">Input2</label>
+        <input type="text" name="num-two" id="num-two">
+        <br><br>
+
+        <input type="radio" name="sign-area" id="box1" value="add" checked><b> addition(+)</b>
+        <input type="radio" name="sign-area" id="box2" value="subtract" checked><b>subtraction(-)</b>
+        <input type="radio" name="sign-area" id="box3" value="multiply" checked><b>multiplication(*)</b>
+        <input type="radio" name="sign-area" id="box4" value="divide" checked><b>division(/)</b>
+        <br><br>
+
+        <button type="button" onclick="output()">calculate</button>
+
+        <h1 id="resultArea"></h1>
+    </form>
+
+    <script>
+        function output() {
+            var x = (document.getElementById("num-one").value);
+            var y = (document.getElementById("num-two").value);
+            var z = 0;
+
+            if (document.getElementById("box1").checked){
+                z= x + y;
+            }
+            else if (document.getElementById("box2").checked){
+                z= x - y;
+            }
+            else if (document.getElementById("box3").checked){
+                z= x * y;
+            }
+            else {
+                z= x / y;
+            }
+            document.getElementById("resultArea").innerHTML = "Result is:" + z;
+        }   
+    </script>
+</body>
+</html>
+
+
+<!-- 
+function calculate() {
+    var input1 = document.getElementById('input1').value;
+    var input2 = document.getElementById('input2').value;
+    var method = ['addition', 'Subtraction']
+    var result;
+    if (method == 'addition') {
+        result = addition(input1, input2);
+    }
+    else if (method == 'Subtraction') {
+        result = subtraction(input1, input2)
+    }
+    document.getElementById('result').innerHTML = "result is: " + result;
+}
+
+function addition(i1, i12) {
+    return parseInt(i1) + parseInt(i12);
+}
+function subtraction(i1, i12) {
+    return parseInt(i1) - parseInt(i12);
+} -->
+
+<!-- // elseif (method = 'subtraction') {
+//                 result = subtraction(input, input2);
+//             }
+//             elseif (method = 'multiplication') {
+//                 result = multiplication(input, input2);
+//             }
+//             elseif (method = 'division') {
+//                 result = division(input, input2);
+//             }
+//             document.getElementById('result').innerHTML = "result is :" + result;
+
+//         }
+//         function addition(input1, input2) {
+//             return parseInt(input1) + parseInt (input2);
+//         }
+//         function subtraction(i1, i2) {
+//             return parseInt(i1) - parseInt (i2);
+//         }
+//         function multiplication(i1, i2) {
+//             return parseInt(i1) * parseInt (i2);
+//         }
+//         function division(i1, i2) {
+//             return parseInt(i1) / parseInt (i2);
+//         } -->
