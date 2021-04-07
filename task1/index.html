@@ -33,16 +33,16 @@
             var z = 0;
 
             if (document.getElementById("box1").checked){
-                z= x + y;
+                z = parseInt(x) + parseInt(y);
             }
             else if (document.getElementById("box2").checked){
-                z= x - y;
+                z = parseInt(x) - parseInt(y);
             }
             else if (document.getElementById("box3").checked){
-                z= x * y;
+                z = parseInt(x) * parseInt(y);
             }
             else {
-                z= x / y;
+                z = parseInt(x) / parseInt(y);
             }
             document.getElementById("resultArea").innerHTML = "Result is:" + z;
         }   

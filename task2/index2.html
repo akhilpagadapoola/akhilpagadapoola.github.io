@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+        <label for="input">Input1</label>
+        <input type="text" name="num-one" id="num-one">
+        <br><br>
+
+        <button type="button" onclick="output()">Find</button>
+
+        <h1 id="resultArea1"></h1>
+        <h1 id="resultArea2"></h1>
+        <h1 id="resultArea3"></h1>
+        <h1 id="resultArea4"></h1>
+        <h1 id="resultArea5"></h1>
+        <h1 id="resultArea6"></h1>
+    </form>
+
+    <script>
+           function output() {
+               var numbers = [];
+               numbers=document.getElementById("num-one").value;
+               numbers=numbers.split(',');
+               var largest = Number.MIN_SAFE_INTEGER;;
+               var smallest = Number.MAX_VALUE;
+               var neg = [];
+               var pos = [];
+               var even = [];
+               var odd = [];
+               
+               console.log(numbers);
+
+               for(let i=0; i<numbers.length; i++) {
+                   if(numbers[i] > largest){
+                       largest = numbers[i];
+                   }
+                   if(numbers[i] < smallest){
+                       smallest = numbers[i];
+                   }
+              
+                    if((parseInt(numbers[i]) % 2) == 0){
+                       even.push(numbers[i]);
+
+                   }
+                    if((numbers[i] % 2) !== 0){
+                       odd.push(numbers[i]);
+                   }
+                   if(numbers[i] > 0) {
+                       pos.push(numbers[i]);
+                   }
+                   if (numbers[i] < 0){
+                       neg.push(numbers[i]);
+                   }
+                  
+               }
+               console.log(even);
+
+               document.getElementById("resultArea1").innerHTML = "Largest number:" + largest;
+                   document.getElementById("resultArea2").innerHTML = "Smallest number:" + smallest;
+                   document.getElementById("resultArea3").innerHTML = "Even numbers:" + even.toString();
+                   document.getElementById("resultArea4").innerHTML = "Odd numbers:" + odd.toString();
+                   document.getElementById("resultArea5").innerHTML = "+ve numbers:" + pos.toString();
+                   document.getElementById("resultArea6").innerHTML = "-ve numbers:" + neg.toString();
+                    
+           }
+    </script>
+            
+  
+</body>
+</html>
+
+

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+       <textarea name="inputString" cols="100" rows="4"  id="textvalue" placeholder="Description"></textarea>
+   
+
+  
+    <br><br>
+    <button type="button" onclick="output()">Find</button>
+    <p id="words">No of Words :</p>
+    <p id="characters">No of  characters :</p>
+    <p id="spaces">No of spaces :</p>
+
+    <script>
+
+
+    function output() {
+    let val = document.getElementById("textvalue").value;
+    var noofchar = val.length;
+    var noofSpace = (val.split(" ").length - 1);
+    var noofwords = val.match(/\S+/g).length;
+    
+
+
+    document.getElementById("words").innerHTML = 'No of Words:' +   noofwords ;
+    document.getElementById("characters").innerHTML = 'No of characters: ' + noofchar;
+    document.getElementById("spaces").innerHTML = 'No of spaces:' + noofSpace;
+
+    }
+
+    
+ 
+    </script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- </html>
+val.match(/\S+/g).length;
+val.replace(/\s+/g, '').length;
+(val.split(" ").length - 1);
+val.split(" ").length
+
+    function countwords(val) {
+        var space = val.value.match(/\S+/g);
+        var words = spaces ? spaces.length : 0;
+    }
+    
+    function counter(val) {
+        
+        for (let i=0; i < str.length; i++) {
+            if (str.charAt(i)==' '){
+                return wordsCount++;
+            }
+        }
+    } -->
+
+
+
+<!-- 
+When we have a string that contains space characters:
+
+var str = '  A B  C   D EF ';
+and we want to remove the spaces from the string (we want this: 'ABCDEF').
+
+Both this:
+
+str.replace(/\s/g, '')
+and this:
+
+str.replace(/\s+/g, '')
+will return the correct result.
+
+Does this mean that the + is superfluous in this situation? Is there a difference between those two regular expressions in this situation (as in, could they in any way produce different results)?
+
+var str = '  A B  C   D EF ';
+console.log(str.replace(/\s/g, '#'));  // ##A#B##C###D#EF#
+console.log(str.replace(/\s+/g, '#')); // #A#B#C#D#EF# -->
