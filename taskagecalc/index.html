@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>agecalc</title>
+</head>
+
+<body>
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+  </head>
+  <body>
+    <h1>Age calculator</h1>
+    <form>
+        <p>Date of birth(DD/MM/YYYY)</p>
+        <input type="date" id="age">
+        <br><br></br>
+        <input type="button" value="Find" onclick="outputage()" style="width:100px; padding: 5px 5px 5px 5px; color: black; background-color: grey;" >
+    </form>
+
+    <p>Results</p>
+    <p id="resultarea1"></p>
+    <p id="resultarea2"></p>
+
+      <script>
+          function outputage(){
+              var ageinput = document.getElementById('age').value;
+              console.log(ageinput);
+              // var ageinDate = ageinput.split('/');
+              // console.log(ageinDate);
+              var d = Date.parse(ageinput);
+              console.log(d);
+              var age = d;
+              var ageinMin = age/60000;
+              var ageinSec = ageinMin*60;
+              document.getElementById('resultarea1').innerHTML = "Age in minutes :  " + ageinMin +  '     minutes';
+              document.getElementById('resultarea2').innerHTML = "Age in seconds : " + ageinSec +  '     seconds';
+          }
+      
+      </script>
+  </body>
+  </html>
+</body>
+</html>
