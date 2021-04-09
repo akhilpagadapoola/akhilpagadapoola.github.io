@@ -1,0 +1,43 @@
+
+.input-group input{
+    height: 45px;
+    width: 80%;
+
+}
+
+.btn-add {
+    background-color: grey;
+    color: white;
+    padding: 0px 63px;
+}
+
+.btn-remove {
+    background-color: green;
+    color: white;
+    /* padding: 0px 50px; */
+    margin-left: 500px;
+    margin-top: -50px;
+}
+
+
+ul{
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column; 
+    padding-left: 0;
+    margin-bottom: 0;
+    
+}
+
+
+li {
+    position:relative;
+   
+    display: block;
+    padding: 10px 20px;
+    margin-bottom:10px;
+    background-color: white;
+    border: 1px solid black;
+    
+}
+

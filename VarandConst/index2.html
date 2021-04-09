@@ -208,5 +208,38 @@
             delete myobj.g;
             console.log('g' in myobj);
         </script>
+        <script>
+            let color02 = [
+            [1,2,3],
+                [2,3,4],
+                [2,6,7]
+            ];
+
+            for(i in color02){
+                for(j in color02[i]){
+                    console.log(color02[i][j]);
+                };
+            }
+
+// i =0, j= 0
+// i =0, j = 1
+// i =0, j = 2
+
+// i =1, j = 0
+// i =1, j = 1
+// i =1, j = 2
+
+// i =2, j = 0
+// i =2, j = 1
+// i =2, j = 2
+        </script>
+        <script>
+            half = ['first', 'second', undefined, 'fourth']
+
+            half.forEach(function(value, index) {
+            console.log(value);
+            console.log(index);
+            });
+        </script>
 </body>
 </html>

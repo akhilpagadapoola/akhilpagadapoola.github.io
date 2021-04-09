@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./script.css">
+</head>
+<body>
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+            <h1>My Todos</h1>
+            <h2>Add new To Do</h2>
+              <div class="input-group">
+                    <input type="text"  class="from-control" id="candidate">
+                    <!-- <div class="input-group-append"> -->
+                      <button onclick="addItem()" class="btn btn-add" type="button">Add item</button>
+                      
+                    <!-- </div> -->
+              </div>
+          </div>
+        </div>
+    </div>
+    <!-- <li id="">
+      candidate.value   
+    </li>
+     -->
+    
+
+    <ul id="dynamic-list">
+      <li id="1">Check today team progress at 12pm<span><button onclick="removeItem(1)" class="btn btn-remove" type="button">Remove item</button></span></li>
+      <li id="2">Check today team progress at 13pm<span><button onclick="removeItem(2)" class="btn btn-remove" type="button">Remove item</button></span></li>
+      <li id="3">Check today team progress at 14pm<span><button onclick="removeItem(3)" class="btn btn-remove" type="button">Remove item</button></span></li>
+      <li id="4">Check today team progress at 15pm<span><button onclick="removeItem(4)" class="btn btn-remove" type="button">Remove item</button></span></li>
+    </ul>
+    
+    
+    <script>
+       var id = 5;
+      function addItem() {
+       
+      var ul = document.getElementById("dynamic-list");
+      console.log(ul);
+      var candidate = document.getElementById("candidate");
+      var li = document.createElement("li");
+      var span = document.createElement("span");
+      var button = document.createElement("button");
+      button.setAttribute('onclick',"removeItem("+id+")");
+      button.setAttribute('class',"btn btn-remove"); 
+      button.setAttribute('type',"button");
+      button.appendChild(document.createTextNode("Remove item"));
+      li.setAttribute('id',id);
+      li.appendChild(document.createTextNode(candidate.value));
+      li.appendChild(span);
+      span.appendChild(button);
+      ul.appendChild(li);
+      id++;
+    }
+
+      function removeItem(id){
+        var ul = document.getElementById("dynamic-list");
+        var li = document.getElementById(id);
+        ul.removeChild(li);
+        
+      }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+<h1>To Do list app</h1>
+ <form id ="to do from">
+   <input id="todoInput">
+   <button type="button" onclick="todoList()">Add</button>
+ </form>
+ <h1>My Todo's</h1>
+ <ol id ="todoList">
+
+ </ol>
+ <script>
+   function todoList() {
+     var item =document.getElementById("todoInput").value
+     var text =document.createTextNode(item)
+     var newItem =document.createElement("li")
+     newItem.appendChild(text)
+     document.getElementById("todoList").appendChild(newItem)
+   }
+ </script> -->
+
+
+
+
+
+
+<!-- 
+
+
+
+<h1>My Todo's</h1>
+<h2>Add new Todos</h2>
+<textarea name="inputString" cols="50" rows="4"  id="num-one"></textarea>
+<button type="button" onclick="output()">Add</button>
+
+<!-- 
+<p id="demo1"><input type="text" name="text-one"></p>  -->
+<!-- <p id="demo1"></p> -->
+<!-- <button type="button" onclick="output1()">Remove</button> -->
+<!-- 
+<script>
+    
+
+    function output() {
+      var fruits = document.getElementById("num-one").value
+      console.log(fruits);
+      console.log(typeof(fruits));
+      fruits.push(fruits);
+
+      // fruits=document.getElementById("num-one").value
+      // fruits=fruits.split(' ');
+
+      // console.log(fruits);
+      
+
+      // fruits.push("check today progess at 12pm");
+     document.getElementById('demo1').innerHTML = fruits;
+     
+    }
+</script> --> 
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+<p>Click the button to add a new element to the array.</p>
+<label for="input">Input1</label>
+<input type="text" name="num-one" id="num-one">
+<br><br>
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo1"></p>
+
+<script>
+var fruits = [];
+
+console.log(fruits);
+
+fruits=document.getElementById("num-one").value
+fruits=fruits.split('');
+
+console.log(fruits);
+
+function myFunction() {
+  fruits.push("check today progess at 12pm");
+  document.getElementById('demo1').innerHTML = fruits ;
+}
+</script> -->
