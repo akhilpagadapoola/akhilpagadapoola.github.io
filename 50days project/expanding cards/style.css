@@ -40,6 +40,7 @@ body {
   left: 20px;
   margin: 0;
   opacity: 0;
+  /* writing-mode: vertical-rl; */
 }
 
 .panel.active {

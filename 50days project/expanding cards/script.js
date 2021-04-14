@@ -12,3 +12,11 @@ function removeActiveClasses() {
         panel.classList.remove('active')
     })
 }
+
+
+// $(function() {
+//     $('.panel').click(function() {
+//         $('.panel').removeClass('active');
+//         $(this).addClass('active');
+//     })
+// })
