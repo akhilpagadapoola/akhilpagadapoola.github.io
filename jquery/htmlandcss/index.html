@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  
+    <script>  
+    $(document).ready(function(){  
+        $("button").click(function(){  
+            $("p1").html("Hello <b>Javatpoint.com</b>");  
+        });  
+    });  
+    </script>  
+    <script>  
+        $(document).ready(function(){  
+            $("button").click(function(){  
+                alert($("p2").html());  
+                alert($("p3").html());  
+            });  
+        });  
+    </script>  
+    <style>  
+        p {  
+          margin: 8px;  
+          font-size: 20px;  
+          color: black;  
+          cursor: pointer;  
+        }  
+        b {  
+          text-decoration: underline;  
+          color: red;
+        }  
+        button {  
+          cursor: pointer;  
+        }  
+    </style>  
+
+    <script>  
+    $(document).ready(function(){  
+        $("button").click(function(){  
+            $("p5").text("Welcome to javatpoint.com!");  
+        });  
+    });  
+    </script>  
+
+</head>
+<body>
+    <button>Click here to change the content of all p elements</button> <br>
+    <p1>This is a paragraph.</p1><br>
+    <p1>This is another paragraph.</p1><br>
+
+    <br><br>
+
+
+    <button>Return the content of p element</button><br>  
+    <p2>This is first <b>paragraph</b>.</p2> <br>
+    <p3>This is another <b>paragraph</b>.</p3> 
+
+    <br><br>
+    <p4>  
+        <b>Click</b> here to change the <span id="tag">html to text</span>  
+    </p4>  
+    <script>  
+      $( "p4" ).click(function() {  
+        var htmlString = $( this ).html();  
+        $( this ).text( htmlString );  
+      });  
+   </script> 
+
+   <br><br>
+
+   <button>Click here to set text content for all p elements</button>  <br>
+   <p5>Hello Guys!</p5>  <br>
+   <p5>Looking for online training....</p5> <br><br> 
+   
+
+  <p6></p6><br><br>
+  <select id="single">    
+    <option>Single</option>    
+    <option>Double</option>    
+    <option>Triple</option>    
+  </select>    
+  <script>    
+    function displayVals() {    
+      var singleValues = $( "#single" ).val();    
+      $( "p6" ).html( "<b>Value:</b> " + singleValues);    
+    }    
+    $( "select" ).change( displayVals );    
+    displayVals();    
+  </script>  <br><br>
+
+  <p7></p7> <br><br>
+  <select id="single1">  
+    <option>Single</option>  
+    <option>Single2</option> 
+    <option>Single3</option>  
+  </select>  <br><br>
+
+  <select id="multiple" multiple="multiple">  
+    <option selected="selected">Multiple</option>  
+    <option>Multiple2</option>  
+    <option>Multiple3</option>  
+  </select>  
+  <script>  
+  function displayVals() {  
+    var singleValues = $( "#single1" ).val();  
+    var multipleValues = $( "#multiple" ).val() || [];  
+    $( "p7" ).html( "<b>Single:</b> " + singleValues +  
+      " <b>Multiple:</b> " + multipleValues);  
+  }  
+  $( "select" ).change( displayVals );  
+  displayVals();  
+  </script>  <br><br>
+
+  <script>  
+  $(document).ready(function(){  
+      $("button").click(function(){  
+          $("input:text").val("JavaTpoint");  
+      });  
+  });  
+  </script>  
+  </head>  
+  <body>  
+  <p8>Name: <input type="text" name="user"></p8>  
+  <button>Set the value of the input field</button>  
+
+  <br><br>
+  <script>  
+    $(document).ready(function(){  
+        $("button").click(function(){  
+            alert("Background color = " + $("p9").css("background-color"));  
+            alert("Background color = " + $("p10").css("background-color"));  
+            alert("Background color = " + $("p11").css("background-color"));  
+        });  
+    });  
+  </script> 
+
+  <h2>This is a heading</h2>  
+  <p9 style="background-color:#ff0000">The background-color of this paragraph is red.</p9>  
+  <p10 style="background-color:#00ff00">The background-color of this paragraph is green.</p10>  
+  <p11 style="background-color:#0000ff">The background-color of this paragraph is blue.</p11>  
+  <button>Click here to get the background-color of first matched element.</button>  
+
+  <br><br>
+  <script>  
+    $(document).ready(function(){  
+        $("button").click(function(){  
+            // $("p12").css("background-color", "violet");  
+            $("p12").css({"background-color": "yellow", "font-size": "200%"});
+        });  
+    });  
+    </script>  
+    <p12 style="background-color:#ff0000">The background-color of this paragraph is red.</p12>  
+    <p12 style="background-color:#00ff00">The background-color of this paragraph is green.</p12>  
+    <p12 style="background-color:#0000ff">The background-color of this paragraph is blue.</p12>  
+    <p>This paragraph has no background-color. </p>  
+    <button>Click here to set a specific background-color of all matched element</button>  <br></br>
+    
+
+    <script>  
+      $(document).ready(function(){  
+          $("button").click(function(){  
+              $("p13").before("<p><b>Hello javatpoint.com</b></p13>");  
+          });  
+      });  
+    </script>  
+      
+    <button>Insert content before each p element</button>  <br>
+    <p13>This is a tutorial website.</p13>  <br>
+    <p13>This is a training institute.</p13> <br><br>
+
+    <script>    
+      $(document).ready(function(){    
+          $("#btn1").click(function(){    
+              $("p14").prepend("<b>Prepended text</b>. ");    
+          });    
+      });    
+    </script>    
+        
+    
+    <p14>This is the first paragraph.</p14>    <br>
+    <p14>This is the second paragraph.</p14>    <br>
+    <button id="btn1">Prepend text</button> <br><br><br>
+
+
+
+  <script>  
+  $(document).ready(function(){  
+      $("#btn2").click(function(){  
+          $("p15").prepend("<b>Prepended text</b>. ");  
+      });  
+      $("#btn3").click(function(){  
+          $("ol").prepend("<li>Prepended item</li>");  
+      });  
+  });  
+  </script>  
+  </head>  
+  <body>  
+  <p15>This is the first paragraph.</p15> <br> 
+  <p15>This is the second paragraph.</p15>  <br>
+  <ol>  
+    <li>Item no.1</li>  
+    <li>Item no.2</li>  
+    <li>Item no.3</li>  
+  </ol>  
+  <button id="btn2">Prepend text</button>  <br>
+  <button id="btn3">Prepend list item</button> <br>
+
+   
+
+  
+  <p16>javatpoint.com</p>  
+  <p16>Guys! Welcome to the best tutorial site.</p16>  
+   <script>  
+  $( "p16" ).prepend( "<b>Hello </b>" );  
+  </script> <br><br>
+
+  <script>  
+  $(document).ready(function(){  
+      $("button").click(function(){  
+          $("p17").after("<p><b>Hello javatpoint.com</b></p>");  
+      });  
+  });  
+  </script>  
+  </head>  
+  <body>  
+  <button>Insert content after each p element</button>  <br>
+  <p17>This is a tutorial website.</p17>  <br>
+  <p17>This is a training institute.</p17>  <br><br>
+
+
+  <script>  
+    $(document).ready(function(){  
+        $("button").click(function(){  
+            $("<span><b>Hello javatpoint.com</b></span>").insertAfter("p18");  
+        });  
+    });  
+  </script>  
+    
+    <button>Insert span element after each p element</button>  <br>
+    <p18>This is a tutorial website.</p18>  <br>
+    <p18>This is a training institute.</p18>  <br><br>
+
+
+    <script>  
+      $(document).ready(function(){  
+          $("#btn5").click(function(){  
+              $("p19").append(" <b>Newly added appended text</b>.");  
+          });  
+          $("#btn6").click(function(){  
+              $("ol").append("<li><b>Newly added appended item</b></li>");  
+          });  
+      });  
+    </script>    
+      <p19>This is a paragraph.</p19>  
+      <p19>This is another paragraph.</p19>  
+      <ol>  
+        <li>Item no.1</li>  
+        <li>Item no.2</li>  
+        <li>Item no.3</li>  
+      </ol>  
+      <button id="btn5">Append text</button>  
+      <button id="btn6">Append item</button>  <br><br>
+
+
+      <script>  
+        $(document).ready(function(){  
+            $("button").click(function(){  
+                $("<span><b>Hello javatpoint.com</b></span>").appendTo("p20");  
+            });  
+        });  
+      </script>  
+      
+        <button>Add new content at the end of each p element</button><br><br>  
+        <p20>I am a new reader.</p20>  <br><br>
+        <p20>I am also a new reader.</p20>  <br><br>
+<!-- 
+
+        <script>  
+          $(document).ready(function(){  
+              $("button").click(function(){  
+                  $("p21").clone().appendTo("body");  
+              });  
+          });  
+        </script>  
+           
+        <p21><b> javatpoint.com is a popular tutorial website.</b></p21>  <br><br> 
+        <p21><b>javatpoint.com is a training institute also.</b></p21>  <br><br> 
+        <button>Click here, to clone all p elements, and append them to the body element</button>  <br><br>  -->
+
+
+          <p22>Hello Guys!</p22>  <br><br>
+          This is javatpoint.com<br/>  <br><br>
+          <p22>A place for all technology.</p22>  <br><br>
+          <button>Execute remove() method on paragraphs</button>  <br><br>
+          <script>  
+          $( "button" ).click(function() {  
+            $( "p22" ).remove();  
+          });  
+          </script>  
+
+          <script>  
+            $(document).ready(function(){  
+                $("button").click(function(){  
+                    $("p23").remove();  
+                });  
+            });  
+          </script>  
+            </head>  
+            <body>  
+            <p23>Welcome Guys!</p23>  <br><br>
+            <p23><b>This is javatpoint.com</b></p23>  <br><br>
+            <button>Click here to execute remove() method</button> <br><br>
+
+
+
+
+               <script>  
+                $(document).ready(function(){  
+                    $("button").click(function(){  
+                        $("div24").empty();  
+                    });  
+                });  
+                </script>  
+              
+                <div24 style="height:150px;background-color:yellow">  
+                Twinkle, twinkle, little star,<br/>  
+                How I wonder what you are!</br>  
+                Up above the world so high,<br/>  
+                Like a diamond in the sky.<br/>  
+                Twinkle, twinkle, little star,<br/>  
+                How I wonder what you are!<br/>  
+                <p><b>This poem is written inside the div.</b></p>  
+                </div24>  
+                <p>This paragraph is written outside the div.</p>  
+                <button>Execute empty() method to remove the content of div element.</button> 
+
+
+            
+            
+            <script>  
+                  $(document).ready(function() {  
+                     $("div").click(function () {  
+                        $(this).empty();  
+                     });  
+                  });  
+            </script>  
+            <style>  
+            .div{ margin:10px;padding:12px; border:2px solid #666; width:60px;}  
+            </style>  
+            </head>  
+            <body>  
+            <p>Click any of the box given below to see the result:</p>  
+            <div class="div" style="background-color:yellow;">Click me!</div>  
+            <div class="div" style="background-color:green;">Click me!</div>  
+            <div class="div" style="background-color:red;">Click me!</div>  
+
+
+            <script>  
+              $(document).ready(function(){  
+                $("button").click(function(){  
+                  $("p25").detach();  
+                });  
+              });  
+           </script>  
+              </head>  
+              <body>  
+              <p25>Hello Guys!</p25>  
+              <p25>This is javatpoint.com</p25>  
+              <button>Click here to detach all p elements</button>
+
+
+               <!-- jQuery detach() example 2 -->
+
+              <!-- <p>Hello Guys!</p>  
+              <p>This is javatpoint.com</p>  
+              <button>Click here to Attach/detach all p elements. </button>  
+              <script>  
+              $( "p" ).click(function() {  
+                $( this ).toggleClass( "off" );  
+              });  
+              var p;  
+              $( "button" ).click(function() {  
+                if ( p ) {  
+                  p.appendTo( "body" );  
+                  p = null;  
+                } else {  
+                  p = $( "p" ).detach();  
+                }  
+              }); 
+            </script>    -->
+            <!-- <script>  
+              $(document).ready(function(){  
+                  $("#btn1").click(function(){  
+                      $("body").append($("#p1").detach());  
+                  });  
+                  $("#btn2").click(function(){  
+                      $("body").append($("#p2").remove());  
+                  });  
+                  $("p").click(function(){  
+                      $(this).animate({fontSize: "+=1px"})  
+                  });  
+              });  
+              </script>  
+              
+              <p id="p1"><b>This paragraph will keep its click event even after it is moved.</b></p>  
+              <p id="p2">This paragraph will not keep its click event after it is moved.</p>  
+              <button id="btn1">Detach and append p element</button>  
+              <button id="btn2">Remove and append p element</button>     -->
+
+
+              <script>  
+                $(document).ready(function(){  
+                    $("button").click(function(){  
+                        alert($("div").scrollTop() + " px");  
+                    });  
+                });  
+                </script>  
+                </head>  
+                <body>  
+                <div style="border:1px solid black;width:150px;height:100px;overflow:auto">  
+                Twinkle, twinkle, little star,How I wonder what you are!  
+                Up above the world so high, Like a diamond in the sky.   
+                Twinkle, twinkle, little star, How I wonder what you are!</div><br>  
+                <button>Return the vertical position of the scrollbar</button>  
+                <p>Move the scrollbar down and click the button again.</p>  <br><br>
+
+<!-- 
+
+                <style>  
+                  div.demo {  
+                    background: #7fffd4 none repeat scroll 0 0;  
+                    border: 3px solid #666;  
+                    margin: 5px;  
+                    padding: 5px;  
+                    position: relative;  
+                    width: 200px;  
+                    height: 150px;  
+                    overflow: auto;  
+                  }  
+                  p {  
+                    margin: 10px;  
+                    padding: 5px;  
+                    border: 2px solid #666;  
+                    width: 1000px;  
+                    height: 1000px;  
+                  }  
+                  </style>    
+                
+                <div class="demo"><h1>Welcome to:</h1><p>javatpoint.com</p></div>  
+                <script>  
+                $( "div.demo" ).scrollTop( 300 );  
+                </script>   -->
+
+
+
+                <script>  
+                  $(document).ready(function(){  
+                      $("button").click(function(){  
+                          $("img").attr("width", "500");  
+                      });  
+                  });  
+                </script>  
+                  </head>  
+                  <body>  
+                  <img src="./3.jpg" alt="Good Morning Friends"width="284" height="213"><br>
+                  <button>Set the width attribute of the image</button>
+</body>
+</html>
