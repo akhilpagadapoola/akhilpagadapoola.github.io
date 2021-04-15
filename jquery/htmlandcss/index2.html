@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+    <style>  
+        .intro {  
+            font-size: 200%;  
+            color: red;  
+        }  
+    </style>
+    <style>
+        .intro1 {  
+            font-size: 150%;  
+            color: Blue;  
+        }  
+    </style>   
+    <style>  
+        .red { color:red; }  
+        .blue { color:blue; }  
+    </style>  
+    <style>  
+        .main {  
+            font-size: 150%;  
+            color: red;  
+        }  
+    </style>
+    <style>  
+        p {  
+          margin: 4px;  
+          font-size: 16px;  
+          font-weight: bolder;  
+          cursor: pointer;  
+        }  
+        .blue1 {  
+          color: black;  
+        }  
+        .highlight {  
+          background: pink;  
+        }  
+    </style> 
+    <style>  
+        div {  
+          width: 100px;  
+          height: 80px;  
+          float: left;  
+          margin: 5px;  
+          background:orange;  
+          cursor: pointer;  
+        }  
+        .mod {  
+          background: green;  
+          cursor: default;  
+        }  
+    </style>  
+    <style>  
+       .eight {  
+          width: 50px;  
+          height: 100px;  
+          float: left;  
+          margin: 5px;  
+          background: rgb(255,140,0);  
+          cursor: pointer;  
+        }  
+    </style>  
+  
+</head>
+<body>
+    <script>  
+        $(document).ready(function(){  
+            $("button").click(function(){  
+                var $x = $("div5");  
+                $x.prop("color","#e0eeee");  
+                $x.append("The value of the color property: " + $x.prop("color"));  
+                $x.removeProp("color");  
+                $x.append("<br>Now the value of the color property: " + $x.prop("color"));  
+            });  
+        });  
+    </script>  
+       
+    <button>Add and remove a property</button><br><br>  
+    <div5></div5>  
+
+
+    <script>  
+        $(document).ready(function(){  
+            $("button").click(function(){  
+                $("p:first").addClass("intro");  
+            });  
+        });  
+    </script>  
+    <h1>This is a heading</h1>  
+    <p>This is a paragraph.</p>  
+    <p>This is another paragraph.</p>  
+    <button>Add a class name to the first p element</button>  
+
+
+    <script>  
+        $(document).ready(function(){  
+            $("button").click(function(){  
+                alert($("p").hasClass("intro2"));  
+            });  
+        });  
+    </script>  
+ 
+    <h1>Look here, I am a heading.</h1>  
+    <p class="intro1">This is a paragraph.</p>  
+    <p>This is also a paragraph.</p>  
+    <button>Click here to check if any p element have an "intro" class?</button>    
+    <br><br><br>
+
+
+    <script>  
+        $(document).ready(function() {  
+        $("#result1").text( $("p1#pid1").hasClass("red") );  
+        $("#result2").text( $("p1#pid2").hasClass("red") );  
+        });  
+    </script>  
+
+  
+    <p1 class="red" id="pid1">This is first paragraph.</p1> <br>
+    <p1 class="blue" id="pid2">This is second paragraph.</p1>   <br>
+    <div1 id="result1"></div1>   <br>
+ <br>
+ <div1 id="result2"></div1>   
+
+
+
+ <script>  
+    $(document).ready(function() {     
+     $(".btn").click(function(){   
+      var className = $(this).attr("id");  
+      $("ul li").each(function() {       
+       if ($(this).hasClass(className)) {  
+        $(this).fadeTo('slow', 0.0).fadeTo('slow', 1.0);        
+       }  
+      });      
+     });   
+    });  
+</script>     
+    <!-- <style>  
+    ul{  
+     font-family: monospace;  
+     font-size: 15px;  
+     font-family: monospace;   
+     font-style: normal;  
+     font-size-adjust: none;  
+     width:200px;     
+     padding:0px;   
+    }  
+       
+    ul li{  
+     background-color:#7fffd4;  
+     width:100px;  
+     margin:5px;  
+     padding:5px;  
+     list-style-type:none;  
+     width:200px;  
+    }  
+    </style>   -->
+  
+   <h1>jQuery .hasClass() function Example</h1>     
+   <ul>  
+    <li class="red">Red</li>    
+    <li class="green">Green</li>       
+    <li class="green red">Green Red</li>  
+    <li class="blue">Blue</li>  
+   </ul>   
+   <input type="button" class="btn" value="Red Class" id="red">  
+   <input type="button" class="btn" value="Green Class" id="green">  
+   <input type="button" class="btn" value="Blue Class" id="blue">  
+   <input type="button" class="btn" value="No Matching Class" id="noclass">   
+
+
+
+   <script>  
+    $(document).ready(function(){  
+        $("button").click(function(){  
+            $("p").toggleClass("main");  
+        });  
+    });  
+    </script>  
+
+     <br><br>
+    <button>Toggle class "main" for p elements</button>  
+    <p>Hello! javatpoint.com</p>  
+    <p>This is popular tutorial website.</p>  
+    <p><b>Note:</b> Click repeatedly on the button to see the toggle effect.</p> 
+
+
+
+
+
+
+    <br><br>
+    <p class="blue1 highlight">www.javatpoint.com</p>  
+    <p class="blue1">Java Tutorial</p>  
+    <p class="blue1">SQL Tutorial</p>  
+    <p class="blue1">Android Tutorial</p>  
+    <p class="blue1">HTML Tutorial</p>  
+    <p class="blue1">etc.</p>  
+    <script>  
+    $( "p" ).click(function() {  
+    $( this ).toggleClass( "highlight" );  
+    });  
+    </script>  
+
+
+
+
+    <script>  
+    $(document).ready(function(){  
+        $("button").click(function(){  
+            alert("Width of div: " + $("div.div").width());  
+        });  
+    });  
+    </script>  
+    <br><br> 
+    <div  class="div"style="height:100px;width:200px;padding:10px;margin:3px;border:1px solid blue;background-color:lightpink;"></div><br>  
+    <button>Execute the jQuery width() method to return width</button> 
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br> <br><br>
+
+
+
+
+    <br><br>
+    <div>A</div>  
+    <div>B</div>  
+    <div>C</div>  
+    <div>D</div>  
+    <div>E</div>  
+    <script>  
+    var modWidth = 70;  
+    $( "div" ).one( "click", function() {  
+    $( this ).width( modWidth ).addClass( "mod" );  
+    modWidth -= 10;  
+    });  
+    </script>  
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br> <br><br>
+    
+    
+    
+    
+    
+    
+    <script>  
+        $(document).ready(function(){  
+            $("button").click(function(){  
+                alert("Height of div: " + $("div").height());  
+            });  
+        });  
+    </script>   
+    <div style="height:100px;width:200px;padding:10px;margin:3px;border:1px solid blue;background-color:lightpink;">
+    <div class="div">Hello Guys!<br/> This is javatpoint.com</div><br><br><br>
+    <br><br><br>
+    <button>Display the height of div</button>  
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+
+
+
+
+    <div8 class="eight"></div8>  
+    <div8 class="eight"></div8>  
+    <div8 class="eight"></div8>  
+    <div8 class="eight"></div8>  
+    <div8 class="eight"></div8>  
+    <br>
+    <br>
+    <script>  
+    $( "div8.eight" ).one( "click", function() {  
+      $( this ).height( 50 ).css({  
+        cursor: "auto",  
+        backgroundColor: "green"  
+      });  
+    });  
+    </script>  
+
+
+  <script>  
+    $(document).ready(function(){  
+        $("button").click(function(){  
+            alert("Inner width of div is: " + $("div.lastdiv").innerWidth());  
+        });  
+    });  
+  </script>
+  <br><br><br>
+  <div class="lastdiv" style="height:100px;width:500px;padding:10px;margin:3px;border:1px solid blue;background-color:lightpink;"></div><br>  
+  <button>Click here to get the inner width of the div</button>
+
+
+  <script>  
+    $(document).ready(function() {  
+       $("div.six").click(function () {  
+          var color = $(this).css("background-color");  
+          var width = $(this).innerWidth();  
+          $("#result").html("Inner Width is <span>" + width + "</span>.");  
+          $("#result").css({'color': color, 'background-color':'white'});  
+       });  
+    });  
+ </script>  
+<style>  
+    #div11{ margin:10px;padding:10px; border:2px solid #666; width:60px;}  
+    #div21 { margin:15px;padding:15px; border:4px solid #666; width:60px;}  
+    #div31 { margin:20px;padding:20px; border:6px solid #666; width:60px;}  
+    #div41 { margin:25px;padding:25px; border:8px solid #666; width:60px;}  
+</style>  
+</head>  
+<body>  
+<p>Click on any square:</p>  
+<span id="result"> </span>  
+<div class="six" id="div11" style="background-color:orange;"></div>  
+<div class="six" id="div21" style="background-color:green;"></div>  
+<div class="six" id="div31" style="background-color:brown;"></div>  
+<div class="six" id="div41" style="background-color:violet;"></div>
+
+
+
+    <script>  
+    $(document).ready(function(){  
+        $("button").click(function(){  
+            alert("Inner height of the div is: " + $("div").innerHeight());  
+        });  
+    });  
+    </script>  
+    <br><br><br>
+    <div style="height:100px;width:500px;padding:10px;margin:3px;border:1px solid blue;background-color:lightpink;"></div><br>  
+    <button>Click here to get the inner height of the div</button>  
+
+
+
+    <script>  
+        $(document).ready(function(){  
+            $("button").click(function(){  
+                alert("Outer width of div is: " + $("div.seven").outerWidth());  
+            });  
+        });  
+    </script>  
+        </head>  
+        <body>  
+        <div class="seven" style="height:100px;width:500px;padding:10px;margin:3px;border:1px solid blue;background-color:lightpink;"></div><br>  
+        <button>Click here to get the outer width of the div</button> 
+        <br><br>
+
+
+              
+        <script type="text/javascript" language="javascript">  
+            $(document).ready(function() {  
+               $("div.outerwidth").click(function () {  
+                  var color = $(this).css("background-color");  
+                  var width = $(this).outerWidth( true );  
+                  $("#result44").html("Outer Width is <span>" + width + "</span>.");  
+                  $("#result44").css({'color': color, 'background-color':'white'});  
+               });  
+            });  
+         </script>  
+        <style>  
+                    #div12{ margin:10px;padding:10px; border:2px solid #666; width:60px;}  
+                    #div22 { margin:15px;padding:15px; border:4px solid #666; width:60px;}  
+                    #div32 { margin:20px;padding:20px; border:6px solid #666; width:60px;}  
+                    #div42 { margin:25px;padding:25px; border:8px solid #666; width:60px;}  
+        </style>  
+        </head>  
+        <body>  
+        <p>Click on any square:</p>  
+        <span id="result44"> </span>  
+        <div class="outerwidth" id="div12" style="background-color:orange;"></div>  
+        <div class="outerwidth" id="div22" style="background-color:green;"></div>  
+        <div  class="outerwidth" id="div32" style="background-color:brown;"></div>  
+        <div  class="outerwidth" id="div42" style="background-color:violet;"></div>
+
+
+
+        <script>  
+            $(document).ready(function(){  
+                $("button").click(function(){  
+                    alert("Outer height of the div is: " + $("div.ok").outerHeight());  
+                });  
+            });  
+        </script>  
+             <br>
+             <br>
+            <div class="ok" style="height:100px;width:500px;padding:10px;margin:3px;border:1px solid blue;background-color:lightpink;"></div><br>  
+            <button>Click here to get the outer height of the div</button>  
+</body>
+</html>
