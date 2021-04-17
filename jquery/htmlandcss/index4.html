@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  
+    <style>  
+        div{background-color: pink;}  
+    </style>  
+
+    <style>  
+        .div{ margin:5px;padding:2px; border:2px solid #666; width:60px;}
+    </style>  
+    
+    <style>  
+        .div.div1{ margin:12px;padding:12px; border:2px solid #666; width:100px;}  
+    </style>  
+
+</head>
+<body>
+    <script>  
+        $(document).ready(function(){  
+            $("button.btn1").click(function(){  
+                $("p.one").wrap("<div></div>");  
+            });  
+        });  
+    </script>  
+        
+    <p class="one">Hello Guys!</p>  
+    <p class="one">This is javatpoint.com</p>  
+    <button class="btn1">Wrap a div element around each p element</button> 
+    <br><br><br> 
+    
+
+    <script type="text/javascript" language="javascript">  
+        $(document).ready(function() {  
+           $("div.div").click(function () {  
+              var content = '<div class="div"></div>';  
+              $("#destination").wrap( content );  
+           });  
+        });  
+    </script>  
+
+
+    <p>Click on any square to wrap the text:</p>  
+    <div class="div" id="destination">We are going to wrap this text</div>  
+    <div class="div" style="background-color:orange;">ONE</div>  
+    <div class="div" style="background-color:yellow;">TWO</div>  
+    <div class="div" style="background-color:green;">THREE</div>  
+    <br><br><br> 
+   
+    <script>  
+        $(document).ready(function(){  
+            $("button.btn2").click(function(){  
+                $("p.two").wrapInner("<em></em>");  
+            });  
+        });  
+    </script>  
+        
+    <p class="two">Hello Guys!</p>  
+    <p class="two">This is javatpoint.com</p>  
+    <button class="btn2">Wrap a emphasized element around the content of each p element</button> <br><br><br> 
+    
+    
+    <script>  
+        $(document).ready(function(){  
+            $("button.btn3").click(function(){  
+                $("p.three").wrapInner("<em><b><marquee></marquee></b></em>");  
+            });  
+        });  
+    </script>  
+     
+    <p class="three">Hello Guys!</p>  
+    <p class="three">This is javatpoint.com</p>  
+    <button class="btn3">Wrap a emphasized element around the content of each p element</button>
+
+    <br><br><br> 
+    <br><br><br>
+
+    <script type="text/javascript" language="javascript">  
+        $(document).ready(function() {  
+           $("div").click(function () {  
+              var content = "<marquee><b></b></marquee>";  
+              $(this).wrapInner( content );  
+           });  
+        });  
+     </script>
+    
+    <p>Click on any square below to see the result:</p>  
+    <div class="div1" id="destination">Javatpoint.com</div>  
+    <div class="div1" style="background-color:lightpink;">JAVA</div>  
+    <div class="div1" style="background-color:green;">SQL</div>  
+    <div class="div1" style="background-color:lightyellow;">HTML</div>  
+     
+    <br><br><br> 
+    <script>  
+        $(document).ready(function(){  
+            $("button.btn4").click(function(){  
+                $("p.four").wrapAll("<div></div>");  
+            });  
+        });  
+    </script>  
+        <style>  
+        div{background-color: red;}  
+        </style>  
+        </head>   
+        <body>  
+        <p class="four">Hello Guys!</p>  
+        <p class="four">This is javatpoint.com</p>  
+        <button class="btn4">Wrap a div element around all p elements</button>  
+
+        <br><br><br> 
+        <script>  
+            $(document).ready(function(){  
+                $("#btn11").click(function(){  
+                    $("p.five").wrapAll("<div></div>");  
+                });  
+                $("#btn21").click(function(){  
+                    $("p.five").unwrap();  
+                });  
+            });  
+        </script>  
+  
+            <p class="five">Hello Guys!</p>  
+            <p class="five">This is javatpoint.com</p>  
+            <button id="btn11">Wrap a div element around all p element</button>  
+            <button id="btn21">Unwrap</button>  
+</body>
+</html>
