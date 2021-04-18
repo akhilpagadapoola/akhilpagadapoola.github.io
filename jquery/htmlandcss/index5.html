@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+    <style>  
+        p {  
+          margin: 20px 0 0;  
+        }  
+        b {  
+          color: red;  
+        }  
+    </style>  
+</head>
+<body>
+    
+        <script>  
+        $(document).ready(function(){  
+            $("#btn1").click(function(){  
+                $("body").append($("#p1").detach());  
+            });  
+            $("#btn2").click(function(){  
+                $("body").append($("#p2").remove());  
+            });  
+            $("p").click(function(){  
+                $(this).animate({fontSize: "+=1px"})  
+            });  
+        });  
+        </script>  
+
+        <p id="p1"><b>This paragraph will keep its click event even after it is moved.</b></p>  
+        <p id="p2">This paragraph will not keep its click event after it is moved.</p>  
+        <button id="btn1">Detach and append p element</button>  
+        <button id="btn2">Remove and append p element</button>  
+        <br>
+        <br>
+        <script>  
+            $(document).ready(function(){  
+                $("button.btnnew").click(function(){  
+                    alert($("div.new").scrollTop() + " px");  
+                });  
+            });  
+            </script>  
+            
+            <div  class="new" style="border:1px solid black;width:150px;height:100px;overflow:auto">  
+            Twinkle, twinkle, little star,How I wonder what you are!  
+            Up above the world so high, Like a diamond in the sky.   
+            Twinkle, twinkle, little star, How I wonder what you are!</div><br>  
+            <button class="btnnew">Return the vertical position of the scrollbar</button>  
+            <p>Move the scrollbar down and click the button again.</p>  
+
+
+
+
+            <input id="check1" type="checkbox" checked="checked">  
+            <label for="check1">Check me</label>  
+            <p class="pop"></p>  
+            <script>  
+            $( "input" ).change(function() {  
+            var $input = $( this );  
+            $( "p.pop" ).html(  
+                ".attr( \"checked\" ): <b>" + $input.attr( "checked" ) + "</b><br>" +  
+                ".prop( \"checked\" ): <b>" + $input.prop( "checked" ) + "</b><br>" +  
+                ".is( \":checked\" ): <b>" + $input.is( ":checked" ) ) + "</b>";  
+            }).change();  
+</script>
+</body>
+</html>
