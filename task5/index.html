@@ -40,7 +40,23 @@
     <script>
        var id = 5;
       function addItem() {
-       
+
+      var localvalue = {};
+      var i = 0;
+      var input = document.getElementById("candidate").value
+      var localvalue = {
+        'i': i,
+        'input': input
+      };
+      localStorage.setItem(i, JSON.stringify(localvalue));
+      console.log(localvalue);
+      i++;
+      console.log(i);
+      
+      
+    
+      var myHero = localStorage.getItem("i");
+      console.log(myHero);
       var ul = document.getElementById("dynamic-list");
       console.log(ul);
       var candidate = document.getElementById("candidate");
@@ -65,6 +81,8 @@
         ul.removeChild(li);
         
       }
+       
+
     </script>
 </body>
 </html>
@@ -85,6 +103,41 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- // function store(){ //stores items in the localStorage
+  //                   var i = 0;
+  //                   var input = document.getElementById('candidate').value;
+  //                   var key = document.getElementById('key').value;
+
+  //                   var localvalue = {
+  //                       'i': i,
+  //                       'input': input,
+  //                   }
+
+  //                   window.localStorage.setItem(i,JSON.stringify(localvalue));  
+  //                   i++;
+  //                   //converting object to string
+  //               }
+ -->
 
 
 
