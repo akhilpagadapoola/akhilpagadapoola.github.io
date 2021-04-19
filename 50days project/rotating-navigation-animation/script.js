@@ -6,18 +6,18 @@ open.addEventListener('click', () => container.classList.add('show-nav'))
 
 close.addEventListener('click', () => container.classList.remove('show-nav'))
 
-
 // $(function() {
 //     $('.open').click(function() {
-//         $('.open').addClass('show-nav');
-//       
+//         $('.container').addClass('show-nav');
+      
 //     })
 // })
 
 
 // $(function() {
 //     $('.close').click(function() {
-//         $('.close').removeClass('show-nav');
-//       
+//         $('.container').removeClass('show-nav');
+      
 //     })
 // })
+  

@@ -50,3 +50,52 @@ function update() {
 
 
 
+//  <script>
+
+// var currentActive = 1;
+
+// $(document).ready(function() {
+//     $("#next").click(function() {
+//         currentActive ++;
+//         if(currentActive > $(".circle").length) {
+//             currentActive =  $(".circle").length
+//         }
+//         $("#prev").removeAttr("disabled","disabled");
+//         update(currentActive)
+//     });
+
+//     $("#prev").click(function() {
+//         currentActive --;
+//         if(currentActive < 1) {
+//             currentActive = 1
+//         }
+//          $("#next").removeAttr("disabled","disabled");
+//         update(currentActive)
+//     });
+
+
+
+// function update (currentActive) {
+//   $(".circle").each(function() {
+//           if(parseInt($(this.html()) === currentActive) {
+//           $(this).addClass("active");
+//         } else {
+//           $(this).removeClass("active");
+//         }
+          
+//   });
+//   const actives = $('.active')
+
+//   $(".progress").width(($('.active').length - 1) / ($(".circle").length - 1) * 100 + '%')
+
+//   if(currentActive === 1) {
+//     $("#prev").disabled = true
+//   } else if(currentActive === $(".circle").length) {
+//   $("#next").disabled = true
+//   } else {
+//   $("#prev").disabled = false
+//   $("#next").disabled = false
+//   }
+
+// }
+// </script> 
