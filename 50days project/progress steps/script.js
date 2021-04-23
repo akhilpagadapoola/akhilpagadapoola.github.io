@@ -52,60 +52,57 @@
 
 
 
-// var currentActive = 1;
 
+// var currentActive = 1;
 // $(document).ready(function() {
 //     $("#next").click(function() {
-//         currentActive ++;
-//         if(currentActive > $(".circle").length) {
-//             currentActive =  $(".circle").length
+//         currentActive++;
+//         if (currentActive >= $(".circle").length) {
+//             currentActive = $(".circle").length
+//             $("#next").attr("disabled", "disabled");
 //         }
-//         $("#prev").removeAttr("disabled","disabled");
 //         update(currentActive)
+//         $("#prev").removeAttr("disabled");
 //     });
-
+//     // 
 //     $("#prev").click(function() {
-//         currentActive --;
-//         if(currentActive < 1) {
+//         currentActive--;
+//         if (currentActive <= 1) {
 //             currentActive = 1
+//             $("#prev").attr("disabled", "disabled");
+//             console.log(currentActive)
 //         }
-//          $("#next").removeAttr("disabled","disabled");
+    
+//         $("#next").removeAttr("disabled", "disabled");
 //         update(currentActive)
 //     });
 
 
+//     function update(currentActive) {
+//         $('.circle').each(function() {
 
-// function update (currentActive) {
-//   $(".circle").each(function() {
-//           if(parseInt($(this.html()) === currentActive) {
-//           $(this).addClass("active");
-//         } else {
-//           $(this).removeClass("active");
-//         }
-          
-//   });
-// //   const actives = $('.active')
-
-//   $(".progress").width(($('.active').length - 1) / ($(".circle").length - 1) * 100 + '%')
-
-//   if(currentActive === 1) {
-//     $("#prev").disabled = true
-//   } else if(currentActive === $(".circle").length) {
-//   $("#next").disabled = true
-//   } else {
-//   $("#prev").disabled = false
-//   $("#next").disabled = false
-//   }
-
-// }
+//             if (parseInt($(this).text()) === currentActive) {
+//                 $(this).addClass("active");
+               
+//             } else if (parseInt($(this).text()) > currentActive) {
+//                 $(this).removeClass("active");
+              
+//             }
+//             $(".progress").width(($('.active').length - 1) / ($(".circle").length - 1) * 100 + '%')
+           
+//         });
+//     }
+// })
 
 
-var currentActive = 1;
+var currentActive = 10;
 $(document).ready(function() {
     $("#next").click(function() {
-        currentActive++;
-        if (currentActive >= $(".circle").length) {
-            currentActive = $(".circle").length
+        currentActive+=10;
+
+        if (currentActive >= 100) {
+            // currentActive = 100
+            // console.log($(".circle").length)
             $("#next").attr("disabled", "disabled");
         }
         update(currentActive)
@@ -113,9 +110,9 @@ $(document).ready(function() {
     });
     // 
     $("#prev").click(function() {
-        currentActive--;
-        if (currentActive <= 1) {
-            currentActive = 1
+        currentActive-=10;
+        if (currentActive <= 10) {
+            currentActive = 10
             $("#prev").attr("disabled", "disabled");
             console.log(currentActive)
         }
