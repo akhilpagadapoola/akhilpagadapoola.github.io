@@ -1,52 +1,53 @@
 const sounds = ['applause', 'boo', 'gasp', 'tada', 'victory', 'wrong']
 
-sounds.forEach(sound => {
-    const btn = document.createElement('button')
-    btn.classList.add('btn')
+// sounds.forEach(sound => {
+//     const btn = document.createElement('button')
+//     btn.classList.add('btn')
 
-    btn.innerText = sound
+//     btn.innerText = sound
 
-    btn.addEventListener('click', () => {
-        stopSongs()
+//     btn.addEventListener('click', () => {
+//         stopSongs()
 
-        document.getElementById(sound).play()
-    })
-
-    document.getElementById('buttons').appendChild(btn)
-})
-
-function stopSongs() {
-    sounds.forEach(sound => {
-        const song = document.getElementById(sound)
-
-        song.pause()
-        song.currentTime = 0;
-    })
-}
-
-
-// $(function () {
-//     $('.applause', '.boo', '.gasp', '.tada', '.victory', '.wrong').click(function () {
-//         $('.button').addClass('btn').text('sound');
-             
-//         // btn.innerText = sound
-//         // $('.btn').text=sound
-//         $('.button').click(function (){
-//             stopSongs()
-//             document.getElementById(sound).play()
-//         }) 
-
-//         document.getElementById('buttons').appendChild(btn)
-//         // $( '.button').append( $( "btn" ) );
+//         document.getElementById(sound).play()
 //     })
+
+//     document.getElementById('buttons').appendChild(btn)
 // })
 
 // function stopSongs() {
-//     $('.applause', '.boo', '.gasp', '.tada', '.victory', '.wrong').click(function () {
+//     sounds.forEach(sound => {
 //         const song = document.getElementById(sound)
 
 //         song.pause()
 //         song.currentTime = 0;
 //     })
+// }
 
-//   }
+
+ $(function () {
+    $(sounds).each(function (index, sound) {
+        const btn = document.createElement('button');
+        $(btn).addClass('btn');
+        btn.innerText = sound
+        
+        $(btn).click(function (){
+            stopSongs();
+             document.getElementById(sound).play();
+         }); 
+
+        document.getElementById('buttons').appendChild(btn)
+         // $( '.button').append( $( "btn" ) );
+    
+    });
+
+    function stopSongs() {
+        $(sounds).each(function (index, sound) {
+            const song = document.getElementById(sound);
+            song.pause();
+            song.currentTime = 0;
+        });
+
+    };
+
+ });
