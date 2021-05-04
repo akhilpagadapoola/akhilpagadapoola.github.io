@@ -20,7 +20,7 @@
 
 
 $(document).ready(function(){
-  window.addEventListener('keydown', (event) => {
+  $(window).keydown(function(event) {
       $('#insert').html(` <div class="key">
          ${event.key === ' ' ? 'Space' : event.key} 
          <small>event.key</small>
