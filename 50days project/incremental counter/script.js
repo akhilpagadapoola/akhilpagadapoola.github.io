@@ -52,4 +52,26 @@ counters.forEach(counter => {
 // });
 
 
+// $(document).ready(function () {
+//     $(".counter").each(function () {
+//       var $this = $(this),
+//         target = $this.attr("data-target");
+  
+//       $({ countNum: $this.text() }).animate(
+//         {
+//           countNum: target,
+//         },
+//         {
+//           increment: target / 200,
+//           step: function () {
+//             $this.text(Math.ceil(this.countNum));
+//           },
+//           complete: function () {
+//             $this.text(this.countNum);
+//           },
+//         }
+//       );
+//     });
+//   });
+
 
