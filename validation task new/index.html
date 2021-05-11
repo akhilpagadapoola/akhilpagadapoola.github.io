@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+
+<body>
+    <section>
+        <div class="coin1">
+            <img src="./coin-1.png" class="coin">
+            
+        </div>
+        <button class="spin">spin</button>
+    </section>
+    <section>
+        <h1>Winners</h1>
+        <p class="message">contest not started yet</p>
+    </section>
+ 
+    <h1>My Todos</h1> 
+    <h2>Add new Todo</h2>
+    
+    <input type="text"  placeholder="player" id="addtaskinput"/> 
+    <input type="text"  placeholder="bet" id="betInput"/>
+    <select  id="choice">
+        <option value="head">head</option>
+        <option value="tail">tail</option>
+    </select>    
+    <button type="button" id="addtaskbtn">
+              Add Task
+    </button>
+        
+  
+   <div class="to-do-output">
+   <table class="table table-striped mt-3 mb-0" id="addedtasklist">
+      <h2>Current bets</h2>
+      <!-- <p><span id="names"></span><span id="bet"></span><span id="choice"></span></p> -->
+              
+  </table>
+  <script src="./script.js"></script>
+</body>
+</html>
