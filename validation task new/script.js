@@ -1,80 +1,46 @@
-// todoMain();
 
-// function todoMain() {
-    
-//         let playerInput,
-//         betInput,
-//         button,
-//         selectElem,
-//         todoList = [];
-    
-    
-//         getElements ();
-//         addListeners ();
-//         renderRows();
+'use strict'
+
+// const coin = document.querySelector('.coin');
+// const  btn = document.querySelector('.spin');
 
 
+// // coin.classList.add('hidden');
+// coin.src= `handt.png`;
+// console.log(document.querySelector('.message').textContent)
 
-//         function getElements(){
-//             playerInput = document.getElementById("playerInput");
-//             betInput = document.getElementById("betInput");
-//             button = document.getElementById("button");
-            
-//         }
+// btn.addEventListener('click', function() {
+//     document.querySelector('.message').textContent =  "game is in progress";
+//     const coins= Math.trunc(Math.random() * 2) + 1;
+//     console.log(coins, typeof coins);
 
-//         function addListeners(){
-//             button.addEventListener("click", addEntry, false );
-//             selectElem.addEventListener("change", filterEntries, false);
-//         }
+//     coin.classList.remove('hidden');
+//     coin.src= `coin-${coins}.png`;
+// });
 
-
-//         function addEntry(event) {
-//             let playerValue = playerInput.value;
-//             playerInput.value = "";
-
-//             let betValue = betInput.value;
-//             betInput.value = "";
-
-//             let Obj = {
-//                 player: playerValue,
-//                 bet: betValue,
-//             };
-//         }
-
-//         renderRows(obj);
-//         todoList.push(obj);
-
-
-//         function renderRows({todo: player, bet}) {
-//             let playerElem =  document.getElementById("td");
-//             playerElem.innerText = player;
-//             trElem.appendchild(playerElem);
-
-
-//             let betElem =  document.getElementById("td");
-//             betElem.innerText = bet;
-//             trElem.appendchild(betElem);
-//         }
-// }
-
-const coin = document.querySelector('.coin');
-const  btn = document.querySelector('.spin');
-
-
-// coin.classList.add('hidden');
-coin.src= `handt.png`;
-console.log(document.querySelector('.message').textContent)
+const  btn = document.getElementById('spin-btn');
 
 btn.addEventListener('click', function() {
-    document.querySelector('.message').textContent =  "game is in progress";
-    const coins= Math.trunc(Math.random() * 2) + 1;
-    console.log(coins, typeof coins);
+    let coin=["H","T"];
+    let coins=Math.trunc(Math.random() * 2) 
+    
+    setTimeout(() => {
+        if (coins === 1) {
+            document.getElementById("headortails").textContent = "H"
+        } else {
+            document.getElementById("headortails").textContent = "T"
+        }
+    }, 3000);
 
-    coin.classList.remove('hidden');
-    coin.src= `coin-${coins}.png`;
+    document.querySelector('.spin-loading').innerHTML = 'Spinning in progress...Wait for 3 seconds'
+    setTimeout(() => {
+        document.querySelector('.spin-loading').style.display = "none";
+        document.getElementById('game').textContent = 'game is in progress'
+    }, 3000);
+    
+
+ 
 });
-
-
 
 showtask();
 let addtaskinput = document.getElementById("addtaskinput");
@@ -85,10 +51,12 @@ let names = document.getElementById("names");
 let bet = document.getElementById("bet");
 let choice =  document.getElementById("choice");
 
+
 addtaskbtn.addEventListener("click", function(){
-    addtaskinputval = addtaskinput.value;
-    addbetInput = betInput.value;
-    addchoiceInput = choiceInput .value;
+    let taskObj;
+    let addtaskinputval = addtaskinput.value;
+    let addbetInput = betInput.value;
+    let addchoiceInput = choiceInput .value;
     if((addtaskinputval.trim() && addbetInput.trim() && addchoiceInput.trim() ) !=0 ){
         let webtask = localStorage.getItem("localtask");
         if(webtask == null){
@@ -101,9 +69,10 @@ addtaskbtn.addEventListener("click", function(){
         localStorage.setItem("localtask", JSON.stringify(taskObj));  
     }
     showtask();
-})
 
+})
 function showtask(){
+    let taskObj;
     let webtask = localStorage.getItem("localtask");
     if(webtask == null){
             taskObj = [];
@@ -114,29 +83,15 @@ function showtask(){
     let html = '';
     let addedtasklist = document.getElementById("addedtasklist");
     taskObj.forEach((item, index) => {
-        html += `   <tr>
-        <th scope="row">${index+1}</th>
-        <td>${item}</td>
-        
-        <td><button type="button" onclick="deleteitem(${index})">Remove</button></td>
-    </tr>`;
- 
-     console.log(item);
+        html += `<tr>
+                    <th scope="row">${index+1}</th>
+                    <td>${item}</td>
+                    <td><button type="button" onclick="deleteitem(${index})"class="text-danger"><i class="fa fa-trash"></
+                    i>Remove</button></td>
+                </tr>`;
+
     });
-    // let betValue =  betInput.value
-    // betInput.value = "";
-    // let taskObj = {
-    //     betInput:betValue,
-    // }
     addedtasklist.innerHTML = html;
-    // taskObj.push(betInput);
- 
-    // `   <tr>
-    //     <th scope="row">${index+1} ${item} ${index}</th>
-    //     <td>${item}</td>
-    //     <td><button type="button" onclick="deleteitem(${index})"class="text-danger"><i class="fa fa-trash"></
-    //     i>Remove</button></td>
-    // </tr>`
 }
 
 

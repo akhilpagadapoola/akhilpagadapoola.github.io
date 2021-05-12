@@ -1,10 +1,51 @@
-*{
-    margin: 0;
+* {
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
-.coin.hidden {
+
+
+.coin-cointainer {
+    background-color: grey;
+    color: #fff;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#headortails {
+    
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 31px;
+    
+}
+.spin-btn {
+    background-color: tomato;
+    height: 45px;
+    margin-top: 55px;
+}
+
+.spin-loading {
+    color: black;
+    background-color: #ffffff;
+    text-align: left;
+    padding-top: 20px;
+}
+
+.winner {
+    padding-left: 40%;
+    padding-top: 150px;
+    margin: 0;
+  
+}
+/* .coin.hidden {
     display: none;
 }
 
@@ -16,4 +57,23 @@
 
 .coin.hidden {
     display: none;
+} */
+#game {
+  margin: 0;
+}
+
+.start-button{
+
+    padding-left: 30%;
+    padding-top: 25px;
+}
+
+.refresh-page{
+    border-radius: 15px;
+    padding: 25px 25px;
+    background-color: #201111;
+    text-decoration: none;
+    color: white;
+    
+  
 }

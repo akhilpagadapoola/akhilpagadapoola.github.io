@@ -11,20 +11,27 @@
 
 
 <body>
-    <section>
-        <div class="coin1">
-            <img src="./coin-1.png" class="coin">
-            
+    
+    <div class="start-button">
+        <a href="#" id="refresh-page" class="refresh-page">Start New</a>
+    </div>
+    <div class="coin-cointainer">
+        <p id="headortails">Heads or Tails</p>
+        
+        <button id="spin-btn" class="spin-btn">Spin</button>
+        <p class="spin-loading"></p>
+    </div>
+    <div class="winner" id="winner">
+        <h3>Winners</h3>
+        <div class="game-program-container">
+            <div class="game-program" id="game-program">
+                <h1 id="game">Contest not started yet</h1>
+            </div>
         </div>
-        <button class="spin">spin</button>
-    </section>
-    <section>
-        <h1>Winners</h1>
-        <p class="message">contest not started yet</p>
-    </section>
+    </div>
  
-    <h1>My Todos</h1> 
-    <h2>Add new Todo</h2>
+    <!-- <h1>My Todos</h1> 
+    <h2>Add new Todo</h2> -->
     
     <input type="text"  placeholder="player" id="addtaskinput"/> 
     <input type="text"  placeholder="bet" id="betInput"/>
@@ -46,3 +53,4 @@
   <script src="./script.js"></script>
 </body>
 </html>
+
