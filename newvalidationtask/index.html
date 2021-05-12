@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style2.css">
+</head>
+<body>
+    <div class="start-container">
+         <button class="start--new ">Start New</button>
+    </div>
+    <div class="spin-result-holder">
+        <div class="spin-block">
+            <div id="spin-result-box">Heads or Tails</div>
+            
+            <div id="spin-btn"><button class="spin-btn" onclick="spinCoin()">Spin the coin </button></div>
+            <div id="spin-progress"></div>
+        </div>
+      
+        <div class="result-block">
+            <h2>Winners</h2>
+            <div id="result-data">Contest not yet started</div>
+            <div id="result-data1"></div>
+        </div>
+
+    </div>
+    <div class="bets-form">
+        <form class="local form">
+            <label> Player-Name</label>
+            <input type="text" id="player-name">
+            <label>player-bet-money </label>
+            <input type="text" id="player-bet-money">
+            <label>player-choice</label>
+            <input type="text" id="player-choice">
+            <button onclick="addBets()" id="btn-bet-add" class="addlocal">Add</button>
+        </form>
+    </div>
+    <div class="bets-data">
+          <h2>Current Bets</h2>
+          <div id="bets-data-wrapper"></div>
+    </div>
+  
+
+    <script>
+        'use strict'
+        var playerName = document.getElementById('player-name').value;
+        var playerBetMoney = document.getElementById('player-bet-money').value;
+        var playerChoice = document.getElementById('player-choice').value;
+        
+        function winnersBlock() {
+            let resDIV;
+            let bets = getBets();
+            let SpinRes = getSpinResult();
+            const result = bets.filter(bet => bet.playerChoice === SpinRes);
+
+            var sum = 0;
+            var resDiv = "<div><ul>"
+            result.forEach((item) => {
+                sum = sum + Number(item.playerBetMoney);
+                resDiv += "<li>"+ item.playerBetMoney + "Amount won"+ (Number(item.playerBetMoney))*2 +"<li>";
+                
+            });
+            resDiv += "<ul><div>"
+            document.getElementById('result-data1"').innerHTML = resDIV;
+        }
+        function spinCoin() {
+
+       
+            
+            let coinArray = ['H', 'T'];
+            let spinResult = Math.trunc(Math.random() * 2);
+            document.querySelector('#spin-progress').innerHTML = 'Spinning in progress...Wait for 3 seconds'
+            setTimeout(() => {
+                
+                    document.getElementById("spin-result-box").textContent = coinArray[`${spinResult}`]
+                    
+            }, 3000);
+
+            setTimeout(() => {
+                document.querySelector('#spin-progress').style.display = "none";
+                document.getElementById('result-data').textContent = 'game is in progress'
+                
+            }, 3000);
+            winnersBlock();       
+            localStorage.setItem('spinResult', spinResult);
+            
+        }
+
+        function getSpinResult(){
+            return localStorage.getItem('spinResult') || '';
+        }
+
+
+        function addBets() {
+            let items = getBets();
+            items.push({
+                playerName: document.getElementById('player-name').value,
+                playerBetMoney: document.getElementById('player-bet-money').value,
+                playerChoice : document.getElementById('player-choice').value
+
+            })
+            localStorage.setItem('bets', JSON.stringify(items));
+            listBets();
+            playerName.value = "";
+            playerBetMoney.value = "";
+            playerChoice.value = "";
+        }
+
+        function getBets() {
+            return JSON.parse(localStorage.getItem('bets')) || [];
+        }
+
+        function listBets() {
+            
+             let items = getBets();
+             // let resBetsDiv = `<div><ul>`;
+             let resBetsDiv = "";
+   
+                items.forEach(item => {
+                    // resBetsDiv += "<li>" + item.playerName + ","+ item.playerBetMoney + ":"+ item.playerChoice+"<li>"
+                         // resBetsDiv += `<li> ${item.playerName} ,${item.playerBetMoney}: ${item.playerChoice}<li>`
+                     resBetsDiv += `  ${item.playerName} ,${item.playerBetMoney}: ${item.playerChoice}`
+                 });
+                 // resBetsDiv +="" ;
+                 // resBetsDiv += `</ul></div>`;
+                 document.getElementById('bets-data-wrapper').textContent = resBetsDiv;
+        }
+
+
+        listBets();
+
+
+
+
+
+
+    </script>
+</body>
+</html>
+
+
