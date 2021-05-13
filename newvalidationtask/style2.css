@@ -1,9 +1,175 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main-container {
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    width: 70%;
+    margin: auto;
+    padding-top: 50px;
+}
+
+.start-button {
+    text-align: right;
+}
+
+.start-new {
+    background-color: #1C0A0A;
+    text-decoration: none;
+    border-radius: 10px;
+    color: #ffffff;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.head-or-tails-container {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+ 
+    
+}
+
+.head-or-tails-header {
+    background-color: #1C0A0A;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* flex: 0 0 45%; */
+    height: 100%;
+    
+}
+
+#head-or-tails-spin {
+    height: 200px;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.loading-status {
+    color: black;
+    background-color: #ffffff;
+    text-align: left;
+    padding-top: 20px;
+}
+
+
+
+.spin {
+    padding: 30px;
+    color: #ffffff;
+    background-color: #FF5959;
+    border: 0;
+   
+    
+}
+
+.winner {
+    flex: 0 0 45%;
+}
+
+.winner-content-box {
+    padding: 10px 0;
+}
+
+.winner-contest-body {
+    padding: 10px;
+}
+
+.main-container2 {
+    position: relative;
+    padding: 20px 0;
+}
+
+label {
+    position: absolute;
+    top: 0px;
+}
+
+input {
+    padding: 5px;
+    margin-right: 5px;
+    background-color: #DBD8D8;
+    border: 1px solid #b4b0b0;
+    border-radius: 5px;
+}
+
+.select {
+    padding: 5px 30px;
+    border-radius: 5px;
+    border: 1px solid #b4b0b0;
+    margin: 0 8px 0 0;
+}
+
+.button-add {
+    padding: 5px 40px;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #1C0A0A;
+    border: 0;
+    border-radius: 5px;
+}
+
+.current-bets h3 {
+    padding: 15px 0 0;
+}
+
+.list-add {
+    padding-top: 5px;
+}
+
+.total-bet {
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* * {
     /* padding: 0;
     margin: 0; */
-    box-sizing: border-box;
-
+    /* box-sizing: border-box; */
+/* 
 }
 
 .start--new {
@@ -36,8 +202,8 @@
     width: 100px;
     color: #fff;
     
-}
-.result-block {
+} */
+/* .result-block {
    
     margin-left: 500px;
 }
@@ -54,7 +220,9 @@ label {
 }
 .bets-form {
     margin-top: 100px;
-}
+} */
+
+this is d end */
 /* 
 #result-data{
     padding: 10px 0;

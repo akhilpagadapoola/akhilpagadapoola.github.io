@@ -8,128 +8,192 @@
     <link rel="stylesheet" href="./style2.css">
 </head>
 <body>
-    <div class="start-container">
-         <button class="start--new ">Start New</button>
-    </div>
-    <div class="spin-result-holder">
-        <div class="spin-block">
-            <div id="spin-result-box">Heads or Tails</div>
-            
-            <div id="spin-btn"><button class="spin-btn" onclick="spinCoin()">Spin the coin </button></div>
-            <div id="spin-progress"></div>
+    <section class="main-container">
+        <div class="start-button">
+            <a href="#" id="start-new" class="start-new">Start New</a>
         </div>
-      
-        <div class="result-block">
-            <h2>Winners</h2>
-            <div id="result-data">Contest not yet started</div>
-            <div id="result-data1"></div>
+        <div class="head-or-tails-container">
+            <div class="head-or-tails-header">
+                <p id="head-or-tails-spin">Heads or Tails</p>
+                <button id="spin" class="spin">Spin</button>
+                <p class="loading-status"></p>
+            </div>
+
+            <div class="winner" id="winner">
+                <h3>Winners</h3>
+                <div class="winner-content-box">
+                    <div class="winner-contest-body" id="winner-contest-body">
+                        <p id="winner-contest">Contest not started yet</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
-    </div>
-    <div class="bets-form">
-        <form class="local form">
+        <div class="main-container2">
             <label> Player-Name</label>
-            <input type="text" id="player-name">
-            <label>player-bet-money </label>
-            <input type="text" id="player-bet-money">
-            <label>player-choice</label>
-            <input type="text" id="player-choice">
-            <button onclick="addBets()" id="btn-bet-add" class="addlocal">Add</button>
-        </form>
-    </div>
-    <div class="bets-data">
-          <h2>Current Bets</h2>
-          <div id="bets-data-wrapper"></div>
-    </div>
+            <input type="text" id="player-name" required>
+            <label>Bet-Money </label>
+            <input type="text" id="player-bet-money" required>
+            <label>Choice</label>
+            <select id="select" class="select">
+                <option value=""></option>
+                <option id="choice1" value="H">H</option>
+                <option id="choice2" value="T">T</option>
+            </select>
+            <button class="button-add" id="button-add">Add</button>
+        </div>
+        <div class="current-bets">
+            <h3>Current Bets</h3>
+            <div class="list-add">
+                <p id="list" class="list">No bets added yet</p>
+            </div>
+            <div class="total-bet">
+                <p class="heads-total"></p>
+                <p class="tails-total"></p>
+            </div>
+        </div>
+    </section>
+    
   
 
     <script>
-        'use strict'
-        var playerName = document.getElementById('player-name').value;
-        var playerBetMoney = document.getElementById('player-bet-money').value;
-        var playerChoice = document.getElementById('player-choice').value;
+     'use strict'
+
+        const startNew = document.getElementById('start-new');
+        const headorTailsSpin = document.getElementById('head-or-tails-spin');
+        const spinButton = document.getElementById('spin');
+
+        const playerName = document.getElementById('player-name');
+        const playerbetMoney = document.getElementById('player-bet-money');
+        const playerselectOption = document.getElementById('select');
+        const buttonAdd = document.getElementById('button-add');
+        const listAdd = document.querySelector('.list-add')
+
+
+        var currentBet = 0;
+        var currentBet1 = 0;
+        // var betMoneyV = Number(betMoney.value)
+        var totalMoney = 0;
+        var wonMoney = 0;
+        // var spining = true;
+        var headorTailsSpinEl;
         
-        function winnersBlock() {
-            let resDIV;
-            let bets = getBets();
-            let SpinRes = getSpinResult();
-            const result = bets.filter(bet => bet.playerChoice === SpinRes);
-
-            var sum = 0;
-            var resDiv = "<div><ul>"
-            result.forEach((item) => {
-                sum = sum + Number(item.playerBetMoney);
-                resDiv += "<li>"+ item.playerBetMoney + "Amount won"+ (Number(item.playerBetMoney))*2 +"<li>";
-                
-            });
-            resDiv += "<ul><div>"
-            document.getElementById('result-data1"').innerHTML = resDIV;
-        }
-        function spinCoin() {
-
        
-            
-            let coinArray = ['H', 'T'];
-            let spinResult = Math.trunc(Math.random() * 2);
-            document.querySelector('#spin-progress').innerHTML = 'Spinning in progress...Wait for 3 seconds'
+        // const headorTailsSpinEl = Math.trunc(Math.random() * 2) + 1;
+
+
+        // 
+        spinButton.addEventListener('click', () => {
+            let coin = ['H', 'T'];
+            headorTailsSpinEl = Math.trunc(Math.random() * 2);
+            document.querySelector('.loading-status').innerHTML = 'Spinning in progress...Wait for 3 seconds'
             setTimeout(() => {
                 
-                    document.getElementById("spin-result-box").textContent = coinArray[`${spinResult}`]
+                document.getElementById('head-or-tails-spin').textContent = coin[`${headorTailsSpinEl}`]
+                
+            }, 3000);
+            setTimeout(() => {
+                    document.querySelector('.loading-status').style.display = "none";
+                    document.getElementById('winner-contest').textContent = 'game is in progress'
                     
-            }, 3000);
-
-            setTimeout(() => {
-                document.querySelector('#spin-progress').style.display = "none";
-                document.getElementById('result-data').textContent = 'game is in progress'
-                
-            }, 3000);
-            winnersBlock();       
-            localStorage.setItem('spinResult', spinResult);
+                    
+                }, 3000);
+            setTimeout( () => {
+                winner();
+            },5000)
+            localStorage.setItem('headorTailsSpinEl', headorTailsSpinEl);
             
+
+        });
+
+        buttonAdd.addEventListener('click', () => {
+            addItem()
+
+        })
+
+
+        function select() {
+            if (document.getElementById('choice1').selected) {
+                currentBet += Number(playerbetMoney.value)
+                console.log(currentBet)
+            } else if (document.getElementById('choice2').selected) {
+                currentBet1 += Number(playerbetMoney.value)
+            }
         }
 
-        function getSpinResult(){
-            return localStorage.getItem('spinResult') || '';
-        }
+        var items = JSON.parse(localStorage.getItem('bets')) || [];
+
+        function addItem() {
+           
+            var item = playerName.value;
+            var item1 = playerbetMoney.value;
+            var item2 = playerselectOption.value;
+            winner()
 
 
-        function addBets() {
-            let items = getBets();
+            if (item === '') {
+                return document.getElementById('list').innerHTML = "you need to add name and bet";
+            }
             items.push({
-                playerName: document.getElementById('player-name').value,
-                playerBetMoney: document.getElementById('player-bet-money').value,
-                playerChoice : document.getElementById('player-choice').value
-
+                playerName: item,
+                playerbetMoney: item1,
+                playerselectOption: item2
             })
             localStorage.setItem('bets', JSON.stringify(items));
-            listBets();
-            playerName.value = "";
-            playerBetMoney.value = "";
-            playerChoice.value = "";
-        }
-
-        function getBets() {
-            return JSON.parse(localStorage.getItem('bets')) || [];
-        }
-
-        function listBets() {
+            listItems()
             
-             let items = getBets();
-             // let resBetsDiv = `<div><ul>`;
-             let resBetsDiv = "";
-   
-                items.forEach(item => {
-                    // resBetsDiv += "<li>" + item.playerName + ","+ item.playerBetMoney + ":"+ item.playerChoice+"<li>"
-                         // resBetsDiv += `<li> ${item.playerName} ,${item.playerBetMoney}: ${item.playerChoice}<li>`
-                     resBetsDiv += `  ${item.playerName} ,${item.playerBetMoney}: ${item.playerChoice}`
-                 });
-                 // resBetsDiv +="" ;
-                 // resBetsDiv += `</ul></div>`;
-                 document.getElementById('bets-data-wrapper').textContent = resBetsDiv;
+            playerName.value = ''
+            playerbetMoney.value = ''
+            playerselectOption.value = ''
         }
 
+        function listItems() {
+            var list = ''
 
-        listBets();
+            for (var i = 0; i < items.length; i++) {
+                list += "<li>"
+                list += items[i].value + " "
+
+            }
+            document.getElementById('list').innerHTML = ''
+            const add = document.createElement('li')
+            add.innerHTML = `${playerName.value} , ${playerbetMoney.value} : ${playerselectOption.value}`
+            listAdd.appendChild(add);
+            select()
+            document.querySelector('.heads-total').innerHTML = `Total bets in heads ${currentBet}`
+            document.querySelector('.tails-total').innerHTML = `Total bets in tails ${currentBet1}`
+
+
+
+        }
+
+        function winner() {
+
+            // const headorTailsSpinEl = Math.trunc(Math.random() * 2) + 1;
+            setTimeout(() => {
+               
+                if (headorTailsSpinEl === 0) {
+                    document.getElementById('winner-contest-body').innerHTML = ''
+                    document.getElementById('list').innerHTML = ''
+                    const add = document.createElement('li')
+                    add.innerHTML = `${playerName.value} , ${totalMoney += currentBet * 2} Won(${wonMoney += currentBet})`
+                    document.getElementById('winner-contest-body').appendChild(add);
+
+                } else if (headorTailsSpinEl === 1) {
+                    
+                    document.getElementById('winner-contest-body').innerHTML = ''
+                    document.getElementById('list').innerHTML = ''
+                    const add = document.createElement('li')
+                    add.innerHTML = `${playerName.value} , ${totalMoney += currentBet1 * 2} Won(${wonMoney += currentBet1})`
+                    document.getElementById('winner-contest-body').appendChild(add);
+                }
+            }, 3)
+        }
+
+        startNew.addEventListener('click', () => {
+            location.reload()
+        }) 
+
 
 
 
@@ -141,3 +205,193 @@
 </html>
 
 
+<!-- 
+'use strict'
+const startNew = document.getElementById('start--new');
+const coinSpin = document.getElementById('spin-result-box');
+const spinBtn = document.getElementById('spin-btn1');
+var playerName = document.getElementById('player-name');
+var playerBetMoney = document.getElementById('player-bet-money');
+var playerChoice = document.getElementById('player-choice');
+const listAdd = document.getElementById('bets-data-wrapper')
+var currentBet = 0;
+var currentBet1 = 0;
+// var betMoneyV = Number(betMoney.value)
+var totalMoney = 0;
+var wonMoney = 0;
+var spining = true;
+
+
+function addBets() {
+
+var items = JSON.parse(localStorage.getItem('bets')) || [];
+
+var item = playerName.value;
+var item1 = playerBetMoney.value;
+var item2 = playerChoice.value;
+if (item === '') {
+return document.getElementById('bets-data-wrapper').innerHTML = "you need to add name and bet";
+}
+items.push({
+    playerName: item,
+    playerBetMoney: item1,
+    playerChoice: item2
+})
+localStorage.setItem('bets', JSON.stringify(items));
+listBets();
+playerName.value = ''
+playerBetMoney.value = ''
+playerChoice.value = ''
+// let items = getBets();
+
+}
+
+function winnersBlock() {
+    const coinSpinEl = Math.trunc(Math.random() * 2) + 1;
+    setTimeout(() => {
+        if (coinSpinEl === 1) {
+            document.getElementById('result-data').innerHTML = ''
+            document.getElementById('bets-data-wrapper').innerHTML = ''
+            const add = document.createElement('li')
+            add.innerHTML = `${playerName.value} , ${totalMoney += currentBet * 2} Won(${wonMoney += currentBet})`
+            document.getElementById('result-data1').appendChild(add);
+
+        } else if (coinSpinEl === 2) {
+            document.getElementById('result-data').innerHTML = 'no bets added yet'
+        }
+    }, 3)
+    // let resDIV;
+    // let bets = getBets();
+    // let SpinRes = getSpinResult();
+    // const result = bets.filter(bet => bet.playerChoice === SpinRes);
+
+    // var sum = 0;
+    // var resDiv = "<div><ul>"
+    // result.forEach((item) => {
+    //     sum = sum + Number(item.playerBetMoney);
+    //     resDiv += "<li>"+ item.playerBetMoney + "Amount won"+ (Number(item.playerBetMoney))*2 +"<li>";
+        
+    // });
+    // resDiv += "<ul><div>"
+    // document.getElementById('result-data1"').innerHTML = resDIV;
+}
+function spinCoin() {
+
+
+    
+    let coinArray = ['H', 'T'];
+    let spinResult = Math.trunc(Math.random() * 2);
+    document.querySelector('#spin-progress').innerHTML = 'Spinning in progress...Wait for 3 seconds'
+    setTimeout(() => {
+        
+            document.getElementById("spin-result-box").textContent = coinArray[`${spinResult}`]
+            
+    }, 3000);
+
+    setTimeout(() => {
+        document.querySelector('#spin-progress').style.display = "none";
+        document.getElementById('result-data').textContent = 'game is in progress'
+        
+    }, 3000);
+    winnersBlock();       
+    localStorage.setItem('spinResult', spinResult);
+    
+}
+
+function getSpinResult(){
+    return localStorage.getItem('spinResult') || '';
+}
+
+
+
+
+// function getBets() {
+//     return JSON.parse(localStorage.getItem('bets')) || [];
+// }
+
+function listBets() {
+    var list = ''
+
+    for (var i = 0; i < items.length; i++) {
+        list += "<li>"
+        list += items[i].value + " "
+
+    }
+    document.getElementById('bets-data-wrapper').innerHTML = ''
+    const add = document.createElement('li')
+    add.innerHTML = `${ playerName.value} , ${playerBetMoney.value} : ${playerChoice.value}`
+    listAdd.appendChild(add);
+    select()
+    document.querySelector('.heads-total').innerHTML = `Total bets in heads ${currentBet}`
+    document.querySelector('.tails-total').innerHTML = `Total bets in tails ${currentBet1}`
+
+    
+    //  let items = getBets();
+    //  // let resBetsDiv = `<div><ul>`;
+    //  let resBetsDiv = "";
+
+    //     items.forEach(item => {
+    //         // resBetsDiv += "<li>" + item.playerName + ","+ item.playerBetMoney + ":"+ item.playerChoice+"<li>"
+    //              // resBetsDiv += `<li> ${item.playerName} ,${item.playerBetMoney}: ${item.playerChoice}<li>`
+    //          resBetsDiv += `  ${item.playerName} ,${item.playerBetMoney}: ${item.playerChoice}`
+    //      });
+    //      // resBetsDiv +="" ;
+    //      // resBetsDiv += `</ul></div>`;
+    //      document.getElementById('bets-data-wrapper').textContent = resBetsDiv;
+}
+
+function select() {
+    if (document.getElementById('val1').selected) {
+        currentBet += Number(playerBetMoney.value)
+        console.log(currentBet)
+    } else if (document.getElementById('val2').selected) {
+        currentBet1 += Number(playerBetMoney.value)
+    }
+}
+
+
+// listBets(); -->
+
+<!-- <div class="start-container">
+    <button class="start--new" id="start--new">Start New</button>
+</div>
+<div class="spin-result-holder">
+   <div class="spin-block">
+       <div id="spin-result-box">Heads or Tails</div>
+       
+       <div id="spin-btn"><button class="spin-btn" id="spin-btn1" onclick="spinCoin()">Spin the coin </button></div>
+       <div id="spin-progress"></div>
+   </div>
+ 
+   <div class="result-block">
+       <h2>Winners</h2>
+       <div id="result-data">Contest not yet started</div>
+       <div id="result-data1"></div>
+   </div>
+
+</div>
+<div class="bets-form">
+   <form class="local form">
+       <label> Player-Name</label>
+       <input type="text" id="player-name">
+       <label>player-bet-money </label>
+       <input type="text" id="player-bet-money">
+       <label>player-choice</label>
+       <!-- <input type="text" id="player-choice"> -->
+       <!-- <select id="player-choice" class="select">
+           <option value=""></option>
+           <option id="val1" value="H">H</option>
+           <option id="val2" value="T">T</option>
+       </select>
+       <button onclick="addBets()" id="btn-bet-add" class="addlocal">Add</button>
+   </form>
+</div>
+<div class="bets-data">
+     <h2>Current Bets</h2>
+     <!-- <div id="list-add"></div> -->
+     <!-- <div id="bets-data-wrapper">No bets added</div>
+     <div class="total-bet">
+       <p class="heads-total"></p>
+       <p class="tails-total"></p>
+   </div>
+</div> --> --> -->
