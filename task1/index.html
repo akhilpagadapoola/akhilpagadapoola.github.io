@@ -36,18 +36,28 @@
             var z = 0;
 
             if (document.getElementById("box1").checked){
-                z = parseInt(x) + parseInt(y);
+                sum()
+                
             }
             else if (document.getElementById("box2").checked){
-                z = parseInt(x) - parseInt(y);
+                subtraction()
             }
             else if (document.getElementById("box3").checked){
+                
                 z = parseInt(x) * parseInt(y);
             }
             else {
                 z = parseInt(x) / parseInt(y);
             }
             document.getElementById("resultArea").innerHTML = "Result is:" + z;
+
+            function sum() {
+                z = parseInt(x) + parseInt(y);
+            }
+
+            function subtraction () {
+                z = parseInt(x) - parseInt(y);
+            }
         })
 
         // button.addEventListener('click', function(){

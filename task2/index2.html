@@ -13,6 +13,7 @@
         <br><br>
 
         <button type="button" onclick="output()">Find</button>
+        <!-- <button type="button" id="output">Find</button> -->
 
         <h1 id="resultArea1"></h1>
         <h1 id="resultArea2"></h1>
@@ -23,17 +24,24 @@
     </form>
 
     <script>
+       
            function output() {
                var numbers = [];
                numbers=document.getElementById("num-one").value;
                numbers=numbers.split(',');
-               var largest = Number.MIN_SAFE_INTEGER;;
-               var smallest = Number.MAX_VALUE;
+               var largest = Math.max(...numbers)
+               var smallest = Math.min(...numbers)
+            //    var largest = Number.MIN_SAFE_INTEGER;
+            //    var smallest = Number.MAX_VALUE;
                var neg = [];
                var pos = [];
                var even = [];
                var odd = [];
-               
+               var ar = [];
+               const array1 = [2, 3, 1];
+
+                console.log(Math.min(...numbers));
+                                        
                console.log(numbers);
 
                for(let i=0; i<numbers.length; i++) {
@@ -76,3 +84,59 @@
 </html>
 
 
+
+
+<!-- 
+// const output = document.getElementById("output")
+
+// output.addEventListener('click', function (){ 
+    // var numbers = [];
+    //    numbers=document.getElementById("num-one").value;
+    //    numbers=numbers.split(',');
+    //    var largest = Math.max(...numbers)
+    //    var smallest = Math.min(...numbers)
+    // //    var largest = Number.MIN_SAFE_INTEGER;
+    // //    var smallest = Number.MAX_VALUE;
+    //    var neg = [];
+    //    var pos = [];
+    //    var even = [];
+    //    var odd = [];
+    //    var ar = [];
+    //    const array1 = [2, 3, 1];
+
+    //     console.log(Math.min(...numbers));
+                                
+    //    console.log(numbers);
+
+    //    for(let i=0; i<numbers.length; i++) {
+    //        if(numbers[i] > largest){
+    //            largest = numbers[i];
+    //        }
+    //        if(numbers[i] < smallest){
+    //            smallest = numbers[i];
+    //        }
+      
+    //         if((parseInt(numbers[i]) % 2) == 0){
+    //            even.push(numbers[i]);
+
+    //        }
+    //         if((numbers[i] % 2) !== 0){
+    //            odd.push(numbers[i]);
+    //        }
+    //        if(numbers[i] > 0) {
+    //            pos.push(numbers[i]);
+    //        }
+    //        if (numbers[i] < 0){
+    //            neg.push(numbers[i]);
+    //        }
+          
+    //    }
+    //    console.log(even);
+
+    //    document.getElementById("resultArea1").innerHTML = "Largest number:" + largest;
+    //        document.getElementById("resultArea2").innerHTML = "Smallest number:" + smallest;
+    //        document.getElementById("resultArea3").innerHTML = "Even numbers:" + even.toString();
+    //        document.getElementById("resultArea4").innerHTML = "Odd numbers:" + odd.toString();
+    //        document.getElementById("resultArea5").innerHTML = "+ve numbers:" + pos.toString();
+    //        document.getElementById("resultArea6").innerHTML = "-ve numbers:" + neg.toString();
+// }) -->
