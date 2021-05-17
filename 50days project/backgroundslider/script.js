@@ -67,3 +67,31 @@ function setActiveSlide() {
 
 //     slides[activeSlide].classList.add('active')
 // })
+
+
+// $(document).ready(function () {
+//   let activeSlide = 0;
+//   $("#left").click(function () {
+//     activeSlide++;
+//     if (activeSlide > slides.length - 1) {
+//       activeSlide = 0;
+//     }
+//     setBgToBody();
+//     setActiveSlide();
+//   });
+
+//   function setBgToBody() {
+//     $(document.body).css(
+//       "backgroundImage",
+//       ".slides[activeSlide].css.backgroundImage"
+//     );
+//   }
+
+//   function setActiveSlide() {
+//     $(".slide").each(function (index) {
+//       $(".slide").removeClass("active");
+//       $(".slide").addClass("active");
+//     });
+
+//   }
+// });

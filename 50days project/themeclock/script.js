@@ -46,3 +46,61 @@ const scale = (num, in_min, in_max, out_min, out_max) => {
 setTime()
 
 setInterval(setTime, 1000)
+
+
+
+
+// $(function() {
+
+//     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thrusday', 'Friday', 'Saturday'];
+
+//     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Sunday', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+
+//     $('.toggle').click((e) => {
+//         const html = document.querySelector('html')
+//         if ($(html).hasClass('dark')) {
+//             $(html).removeClass('dark')
+//             $(e.target).html('Dark Mode')
+//         } else {
+//             $(html).addClass('dark')
+//             $(e.target).html('Dark White')
+//         }
+//     })
+
+//     function setTime() {
+//         const time = new Date();
+//         const month = time.getMonth();
+//         const day = time.getDay();
+//         const date = time.getDate();
+//         const hours = time.getHours();
+//         const hoursForClock = hours % 12
+//         const minutes = time.getMinutes()
+//         const seconds = time.getSeconds()
+//         const ampm = hours >= 12 ? 'PM' : 'AM'
+
+//         $('.hour').css({
+//             "transform": `translate(-50%, -100%) rotate(${scale(hoursForClock, 0, 11, 0 ,360)}deg)`
+//         })
+
+//         $('.minute').css({
+//             "transform": `translate(-50%, -100%) rotate(${scale(minutes, 0, 59, 0 ,360)}deg)`
+//         })
+//         $('.second').css({
+//             "transform": `translate(-50%, -100%) rotate(${scale(seconds, 0, 59, 0 ,360)}deg)`
+//         })
+
+//         $('.time').html(`${hoursForClock} : ${minutes < 10 ? `0${minutes}` : minutes} : <span class="seconds">${seconds < 10 ? `0${seconds}` : seconds}</span> ${ampm}`)
+
+//          $('.date').html(`${days[day]} , ${months[month]} <span class='circle'>${date}</span>`)
+
+//      }
+
+// function scale(number, inMin, inMax, outMin, outMax) {
+// return (number - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+// }
+
+// setTime()
+// setInterval(setTime, 1000)
+
+// })

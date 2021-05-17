@@ -46,7 +46,9 @@
       var input = document.getElementById("candidate").value
       var localvalue = {
         'i': i,
-        'input': input
+        'input': input,
+        'bet': bet,
+        'choice': choice
       };
       localStorage.setItem(i, JSON.stringify(localvalue));
       console.log(localvalue);
