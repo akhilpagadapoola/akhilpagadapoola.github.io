@@ -13,27 +13,42 @@
 
   
     <br><br>
-    <button type="button" onclick="output()">Find</button>
+    <!-- <button type="button" onclick="output()">Find</button> -->
+    <button type="button" id ="output">Find</button>
     <p id="words">No of Words :</p>
     <p id="characters">No of  characters :</p>
     <p id="spaces">No of spaces :</p>
 
     <script>
+    const output = document.getElementById("output")
+
+    output.addEventListener('click', function(){
+
+        let val = document.getElementById("textvalue").value;
+        var noofchar = val.length;
+        var noofSpace = (val.split(" ").length - 1);
+        var noofwords = val.match(/\S+/g).length;
+        
 
 
-    function output() {
-    let val = document.getElementById("textvalue").value;
-    var noofchar = val.length;
-    var noofSpace = (val.split(" ").length - 1);
-    var noofwords = val.match(/\S+/g).length;
+        document.getElementById("words").innerHTML = 'No of Words:' +   noofwords ;
+        document.getElementById("characters").innerHTML = 'No of characters: ' + noofchar;
+        document.getElementById("spaces").innerHTML = 'No of spaces:' + noofSpace;
+    })
+
+    // function output() {
+    // let val = document.getElementById("textvalue").value;
+    // var noofchar = val.length;
+    // var noofSpace = (val.split(" ").length - 1);
+    // var noofwords = val.match(/\S+/g).length;
     
 
 
-    document.getElementById("words").innerHTML = 'No of Words:' +   noofwords ;
-    document.getElementById("characters").innerHTML = 'No of characters: ' + noofchar;
-    document.getElementById("spaces").innerHTML = 'No of spaces:' + noofSpace;
+    // document.getElementById("words").innerHTML = 'No of Words:' +   noofwords ;
+    // document.getElementById("characters").innerHTML = 'No of characters: ' + noofchar;
+    // document.getElementById("spaces").innerHTML = 'No of spaces:' + noofSpace;
 
-    }
+    // }
 
     
  
