@@ -28,9 +28,9 @@
           
 
                     <div class="dis">
-                        <p class="heads-total-1"></p>
-                        <p class="tails-total-2"></p>
-                        <p class="tails-total-3"></p>
+                        <p class="winners-total"></p>
+                        <p class="amount-total"></p>
+                        <p class="gainorloss-total"></p>
                     </div>
                 </div>
             </div>
@@ -39,9 +39,9 @@
         <div class="main-container2">
             <label> Player-Name</label>
             <input type="text" id="player-name" required>
-            <label>Bet-Money </label>
+            <label>Player-Bet-Money </label>
             <input type="text" id="player-bet-money" required>
-            <label>Choice</label>
+            <label>Player-Choice</label>
             <select id="select" class="select">
                 <option value=""></option>
                 <option id="choice1" value="H">H</option>
@@ -54,9 +54,9 @@
             <div class="list-add">
                 <p id="list" class="list">No bets added yet</p>
             </div>
-            <div class="total-bet">
-                <p class="heads-total"></p>
-                <p class="tails-total"></p>
+            <div class="total-bets">
+                <p class="total-heads"></p>
+                <p class="total-tails"></p>
             </div>
         </div>
     </section>
@@ -73,55 +73,17 @@
     const playerbetMoney = document.getElementById('player-bet-money');
     const playerselectOption = document.getElementById('select');
     const buttonAdd = document.getElementById('button-add');
-    // const listAdd = document.querySelector('.list-add')
-
-
-
-
-
+    const winnerDisplay = document.getElementById('winner-contest');
     var currentBet = 0;
     var currentBet1 = 0;
-    // var betMoneyV = Number(betMoney.value)
-    var totalMoney = 0;
-    var wonMoney = 0;
-    // var spining = true;
     var headorTailsSpinEl;
+    let coin = ['H', 'T'];
+    let winnersTotal = 0;
+    let amountTotal = 0;
+    let gainorlossTotal = 0;
+    let currentBetRel;
+    let currentBetRel1;
 
-
-
-
-    // const headorTailsSpinEl = Math.trunc(Math.random() * 2) + 1;
-
-
-    // 
-    spinButton.addEventListener('click', () => {
-        let coin = ['H', 'T'];
-        headorTailsSpinEl = Math.trunc(Math.random() * 2);
-        document.querySelector('.loading-status').innerHTML = 'Spinning in progress...Wait for 3 seconds';
-        setTimeout(() => {
-            
-            document.getElementById('head-or-tails-spin').textContent = coin[`${headorTailsSpinEl}`]
-            
-        }, 3000);
-
-        localStorage.setItem('headorTailsSpinEl', headorTailsSpinEl);
-
-        setTimeout(() => {
-                document.querySelector('.loading-status').style.display = "none";
-                document.getElementById('winner-contest').textContent = 'game is in progress';
-        
-                
-                
-            }, 3000);
-        setTimeout( () => {            
-            winners();
-            
-            distribute();
-        },5000)
-        
-        
-
-    });
 
     buttonAdd.addEventListener('click', () => {
         addItem()
@@ -130,22 +92,34 @@
 
 
 
-     let currentBetRel;
-     let currentBetRel1;
+    var items = JSON.parse(localStorage.getItem('bets')) || [];
 
-    function select() {
-        if (document.getElementById('choice1').selected) {
-            currentBet += Number(playerbetMoney.value)
-            localStorage.setItem('currentBetRel', currentBet);
-            console.log(currentBet)
-        } else if (document.getElementById('choice2').selected) {
-            currentBet1 += Number(playerbetMoney.value)
-            localStorage.setItem('currentBetRel1', currentBet1);
-            console.log(currentBet1)
-        }
+
+    function getBets() {
+        return JSON.parse(localStorage.getItem('bets')) || []
     }
 
-    var items = JSON.parse(localStorage.getItem('bets')) || [];
+    function getSpinResult() {
+        return localStorage.getItem('headorTailsSpinEl') || '';
+    }    
+    
+    function refresh() {
+        location.reload()
+       
+    }
+
+
+
+    (function() {
+        listItems();
+        document.querySelector('.total-heads').innerHTML = ''
+        document.querySelector('.total-tails').innerHTML = ''
+      
+    })();
+
+
+
+   
 
     function addItem() {
         let items = getBets();
@@ -153,7 +127,7 @@
         var item = inputBox.value;
         var item1 = playerbetMoney.value;
         var item2 = playerselectOption.value;
-        // winner()
+        
 
 
         if (item === ''&& item1 === '' && item2 === '') {
@@ -173,13 +147,48 @@
     }
 
 
-    function getBets() {
-        return JSON.parse(localStorage.getItem('bets')) || []
-    }
 
-    function getSpinResult() {
-        return localStorage.getItem('headorTailsSpinEl') || '';
-    }    
+
+    spinButton.addEventListener('click', () => {
+     
+            
+            setTimeout(() => {
+            headorTailsSpinEl = Math.trunc(Math.random() * 2);
+            headorTailsSpinEl = coin[Math.trunc(Math.random() * coin.length)]
+            // headorTailsSpinEl = coin[Math.floor(Math.random() * coin.length)]
+            localStorage.setItem('headorTailsSpinEl', headorTailsSpinEl);
+            // document.getElementById('head-or-tails-spin').textContent = coin[`${headorTailsSpinEl}`]
+            document.getElementById('head-or-tails-spin').textContent =  headorTailsSpinEl
+            
+            winnersBlock();
+            giveAway();
+            document.querySelector('.loading-status').textContent = '';
+            
+
+            }, 3000)
+
+            document.querySelector('.loading-status').innerHTML = 'Spinning in progress...Wait for 3 seconds';
+            document.getElementById('winner-contest').textContent = 'game is in progress';
+    });
+
+
+
+
+
+
+ 
+   
+    function choice() {
+        if (document.getElementById('choice1').selected) {
+            currentBet += Number(playerbetMoney.value)
+            localStorage.setItem('currentBetRel', currentBet);
+            console.log(currentBet)
+        } else if (document.getElementById('choice2').selected) {
+            currentBet1 += Number(playerbetMoney.value)
+            localStorage.setItem('currentBetRel1', currentBet1);
+            console.log(currentBet1)
+        }
+    }
 
 
 
@@ -192,88 +201,240 @@
         resBetUl += "</ul>"
         document.getElementById('list').innerHTML = resBetUl;
 
-        select()
+        choice()
 
-        document.querySelector('.heads-total').innerHTML = `Total bets in heads ${currentBet}`
-        document.querySelector('.tails-total').innerHTML = `Total bets in tails ${currentBet1}`
+        document.querySelector('.total-heads').innerHTML = `Total bets in heads ${currentBet}`
+        document.querySelector('.total-tails').innerHTML = `Total bets in tails ${currentBet1}`
 
 
 
     }
 
 
+    function winnersBlock() {
 
-
-
-    function winners() {
-        let bets = getBets()
-        
-        let spinRes = getSpinResult()
-
-        let result = bets.filter((bets) => bets.playerselectOption === spinRes)
-        console.log(result);
-        if (result) {
-            var sum = 0;
-            var resDiv = "<div class='li-style'><ul>"
-            result.forEach(ResVal);
-
-            function ResVal(items, index) {
-                sum = sum + Number(items.playerbetMoney);
-            
-                resDiv += "<li>" + items.playerName + " : " + (Number(items.playerbetMoney)) * 2 + " Won ( " + Number(items.playerbetMoney) + " )" + "</li>";
-            }
-            resDiv += "</ul></div>"
-            document.getElementById('winner-contest').innerHTML = resDiv
+        let bets = getBets();
+        let spinRes = getSpinResult();
+        let result = bets.filter(bet => bet.playerselectOption === spinRes);
+        var sum = 0;
+       
+        var resDiv = "<ul>"
+        result.forEach(ResVal);
+        function ResVal(item, index) {
+            sum = sum + Number(item.playerbetMoney);
+            resDiv += "<li>" + item.playerName + " : " + (Number(item.playerbetMoney)) * 2 + " Won ( " + Number(item.playerbetMoney) + " )" + "</li>";
         }
-        
- 
+      
+        resDiv += "</ul>"
+        console.log(resDiv);
+        winnerDisplay.innerHTML = resDiv;
     }
    
-    let total0 = 0;
-    let total1 = 0;
-    let total2 = 0
-    function distribute() {
-        
-        // let element = getBets()
-        let spinRes2 = getSpinResult()
-        
-        if(spinRes2 === currentBetRel){
-            document.querySelector('.heads-total-1').innerHTML = `Total Paid to Winners ${total0 = currentBet * 2}`
-        }
-        else{
-             document.querySelector('.heads-total-1').innerHTML = `Total Paid to Winners ${total0 = currentBet1 * 2}`
-        }
-        document.querySelector('.tails-total-2').innerHTML = `Total amount recived ${total1 += currentBet1 + currentBet}`
+    
 
-        document.querySelector('.tails-total-3').innerHTML = ` ${total2 = total1 - total0} is Company gain`
-  
+
+    function giveAway() {
+        
+        let spinRes2 = getSpinResult();
+        
+        if(spinRes2 === currentBet){
+           
+            document.querySelector('.winners-total').innerHTML = `Total Paid to Winners ${winnersTotal = (currentBet * 2)}`
+        }else{
+      
+             document.querySelector('.winners-total').innerHTML = `Total Paid to Winners ${winnersTotal  = (currentBet1 * 2)}`
+        }
+
+        document.querySelector('.amount-total').innerHTML = `Total amount recived ${amountTotal += currentBet1 + currentBet}`
+
+        
+        if(amountTotal >= winnersTotal) {
+            document.querySelector('.gainorloss-total').innerHTML = ` ${gainorlossTotal = amountTotal - winnersTotal} is Company gain`
+        }else {
+            document.querySelector('.gainorloss-total').innerHTML = ` ${gainorlossTotal = amountTotal - winnersTotal} is Company loss`
+        }
+
     }
 
 
     startNew.addEventListener('click', () => {
-        refreshThePage()
+        refresh()
         localStorage.clear('bets')
-        document.querySelector('.heads-total').innerHTML = ''
-        document.querySelector('.tails-total').innerHTML = ''
-        document.querySelector('.heads-total-1').innerHTML = ''
-        document.querySelector('.tails-total-2').innerHTML = ''
-        document.querySelector('.tails-total-3').innerHTML = ''
-        return document.getElementById('list').innerHTML = 'No bets addes yet';
+        document.querySelector('.total-heads').innerHTML = ''
+        document.querySelector('.total-tails').innerHTML = ''
+        document.querySelector('.winners-total').innerHTML = ''
+        document.querySelector('.amount-total').innerHTML = ''
+        document.querySelector('.gainorloss-total').innerHTML = ''
+        document.getElementById('list').innerHTML = 'No bets addes yet';
         document.getElementById('winner-contest').innerHTML = 'Contest not started yet'
         document.getElementById('head-or-tails-spin').innerHTML = 'Heads or Tails'
     }) 
 
-    function refreshThePage() {
-        location.reload()
-    }
 
-
-    (function() {
-        listItems();
-        document.querySelector('.heads-total').innerHTML = ''
-        document.querySelector('.tails-total').innerHTML = ''
-    })();
 
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+// let coin = ['H', 'T'];
+// headorTailsSpinEl = Math.trunc(Math.random() * 2);
+// document.querySelector('.loading-status').innerHTML = 'Spinning in progress...Wait for 3 seconds';
+// setTimeout(() => {
+    
+//     document.getElementById('head-or-tails-spin').textContent = coin[`${headorTailsSpinEl}`]
+//     localStorage.setItem('headorTailsSpinEl', headorTailsSpinEl);
+    
+// }, 3000);
+
+
+
+// setTimeout(() => {
+//         document.querySelector('.loading-status').textContent = '';
+//         document.getElementById('winner-contest').textContent = 'game is in progress';
+   
+//     }, 3000);
+    
+// setTimeout(() => {            
+//     winnersBlock();
+    
+//     giveAway();
+// },5000) -->
