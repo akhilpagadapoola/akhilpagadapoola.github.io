@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    height: 100%;
+}
+.row {
+   background-color:  rgb(45,45,44);
+   width: 100%;
+  
+
+}
+.container1 {
+    display: flex;
+    margin-left: 50px;
+  
+    
+}
+.main-nav {
+   margin-top: 40px;
+
+}
+.main-nav li {
+    display: inline-block;
+    margin-left: 40px;
+    list-style: none;
+    text-decoration: none;
+}
+/* .main-nav li a {
+    color: #fff;
+  
+} */
+.main-nav li a:link,
+.main-nav li a:visited {
+    padding: 8px 0;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.2s;
+    transition: border-bottom 0.2s;
+}
+
+
+
+.loginclass {
+ 
+    float: right;
+    margin-right: 50px;
+    padding: 0;
+    margin-top: -50px;
+
+}
+
+.loginimgclass {
+    float: right;
+
+}
+
+.h4login {
+    float: right;
+}
+
+.logoimg {
+
+    border-radius: 50%;
+}
+
+.loginimgclass h4 {
+    margin-top: 10px;
+    color: #fff;
+}
+
+.titlebackimage{
+    background-image: url(./img/orange.jpg);
+    width: 100%;
+    height: 450px;
+    padding-top: 50px;
+ }
+.dot{
+    background-image: url(./img/lin.png);
+    z-index: 1;
+    width: 1140;
+    height: 345px;
+} 
+.hill{
+    z-index: 99;
+    float: right;
+    height: 400px;
+    width: 400px;
+    margin-top: -173px;
+} 
+.titlehead{
+    color: #fff;
+   font-weight: 900;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.titletext{
+    color: #fff;
+    text-align: center;
+    word-spacing: 2px;
+    line-height: 25px;
+    margin-top: 40px;
+}
+.titlebtn{
+    padding: 10px 30px;
+    margin-left: 46%;
+    margin-top: 120px;
+
+}
+
+
+
+
+
+
+.twodiv {
+    display: flex;
+    background-color: rgb(51,50,49);
+    
+    padding-top: 70px;
+}
+.col1 {
+    margin-left: 10%;
+    font-size: 100%;
+}
+.col2 {
+    float: right;
+    font-size: 100%;
+    margin-left: 25%;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+   
+}
+.h2:before {
+    display: block;
+    height: 2px;
+    background-color: #e67e22;
+    content: " ";
+    width: 100px;
+    /* margin: 0 auto; */
+    margin-bottom: 30px;
+}
+.span1of2 {
+    margin-bottom: 50px;
+}
+
+/* .flexbox {
+    display: flex;
+} */
+
+.span1of2 h2 {
+    color: rgb(149,125,87);
+    line-height: 30px;
+    margin-bottom: 30px;
+    font-size: 30px;
+ 
+    
+}
+
+.span1of2 p {
+    line-height: 20px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    color: #fff;
+}
+
+.commission-section1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin-top:50px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    justify-content: center;
+
+}
+.firsthalf {
+    width: 50%;
+    margin-left: 100px;
+}
+.firsthalf h2:before {
+    display: block;
+    height: 4px;
+    background-color: #e67e22;
+    content: " ";
+    width: 100px;
+    /* margin: 0 auto; */
+    margin-bottom: 30px;
+}
+.firsthalf h2{
+   line-height: 30px;
+   margin-bottom: 30px;
+}
+.firsthalf p {
+    line-height: 20px;
+    margin-bottom: 30px;
+}
+.firsthalf button {
+    padding: 10px 20px;
+    background-color: transparent;
+}
+.secondhalf {
+   width: 50%;
+
+}
+.commisionbars li {
+     list-style: none;
+     border: 2px black  solid;
+     padding: 20px 20px;
+     margin-bottom: 10px;
+     border-radius: 5px;
+}
+.barslist1 {
+    width:40%;
+    background-color: #E5B22D;
+    border-radius: 5px;
+}
+.barslist2 {
+    width:60%;
+    background-color: #EE972B;
+    border-radius: 5px;
+}
+.barslist3 {
+    width:70%;
+    background-color: #F47B44;
+    border-radius: 5px;
+}
+.barslist4 {
+    width:80%;
+    background-color: #B35328;
+    border-radius: 5px;
+}
+
+.laptopimg {
+    height: 400px;
+    width: 400px;
+}
+
+.commision-section2 {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.thirdhalf {
+    width: 50%;
+    margin-left: 100px;
+}
+
+.fourthhalf {
+    width: 50%;
+}
+.fourthhalf h2:before {
+    display: block;
+    height: 4px;
+    background-color: #e67e22;
+    content: " ";
+    width: 100px;
+    /* margin: 0 auto; */
+    margin-bottom: 30px;
+}
+.fourthhalf h2 {
+    line-height: 30px;
+    margin-bottom: 30px;
+}
+
+.fourthhalf p {
+    line-height: 20px;
+    margin-bottom: 30px;
+}
+
+.fourthhalf button {
+    padding: 10px 20px;
+    background-color: transparent;
+}
+
+.icon {
+    width:15%;
+    height: 50%;
+
+}
+
