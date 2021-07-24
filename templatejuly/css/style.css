@@ -12,8 +12,36 @@ body {
     overflow-x: hidden;
     /* overflow-y: hidden; */
 }
+
 /*******************section1***************************/
-.navigation-container{
+.navigation-container {
+    background-color: rgb(45,45,44);
+    width: 100%;
+}
+
+.navigation-container ul {
+    display: flex;
+    align-items: center;
+    
+}
+.navigation-container li {
+    list-style: none;
+    padding: 20px 20px;
+}
+.navigation-container li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.last-li {
+    margin-left: auto;
+}
+
+.siteground-img {
+    width: 90%;
+}
+
+/* .navigation-container{
    background-color:  rgb(45,45,44);
    width: 100%;
    text-align: center;
@@ -76,27 +104,58 @@ body {
 
     border-radius: 50%;
     width: 25%;
-    /* padding-top: 10px; */
 }
 
 .loginimgclass h4 {
-    /* margin-top: 10px; */
+    
     color: #fff;
-}
+} */
 /******************************section2***************************/
-.header-container{
+.header-container {
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    /* height: 450px; */
+    padding: 90px 0 90px 0;
+    margin: 0 auto;
+    background-image: url(./img/background.png),url(./img/lin.png), url(./img/orange.jpg);
+    background-repeat: no-repeat, no-repeat, repeat;
+    
+    background-position: right bottom, center;
+}
+
+
+.header-container h1{
+    /* padding: 3rem 0; */
+    font-size: 60px;
+    margin-bottom: 30px;
+
+}
+.header-container p{
+    /* padding: 2rem 0; */
+    margin-bottom: 40px;
+    line-height: 25px;
+    font-size: 20px;
+
+}
+.header-container a {
+    padding: 10px 20px;
+    background-color: #fff;
+    text-decoration: none;
+    color:black;
+}
+/* .header-container{
     background-image: url(./img/orange.jpg);
     width: 100%;
     height: 450px;
     padding-top: 50px;
+
  }
 .dot-container{
     background-image: url(./img/lin.png);
     background-repeat: no-repeat;
-    /* background-position: bottom right; */
     z-index: 1;
     width: 100%;
-    /* width: 1140px; */
     height: 345px;
 } 
 .hill-image{
@@ -125,7 +184,7 @@ body {
     margin-left: 46%;
     margin-top: 120px;
 
-}
+} */
 
 /********************section3******************/
 .commission-section1 {
@@ -159,9 +218,15 @@ body {
     line-height: 20px;
     margin-bottom: 30px;
 }
-.firsthalf button {
+/* .firsthalf button {
     padding: 10px 20px;
     background-color: transparent;
+} */
+.firsthalf a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    border: 1px solid black;
 }
 .secondhalf {
    width: 50%;
@@ -234,11 +299,24 @@ t
     
 }
 
-.fourthhalf button {
+.fourthhalf button  {
     padding: 10px 20px;
     background-color: transparent;
-    margin-top: 30px;
+
+   
 } 
+/* 
+.fourthhalfa {
+    margin-top: 30px;
+} */
+
+.fourthhalf a {
+    text-decoration: none;
+    color: black;
+    
+    /* border: 1px solid black; */
+    
+}
 
 /* .button a{
     padding: 10px 20px;
@@ -254,18 +332,18 @@ t
 .twodiv {
     display: flex;
     background-color: rgb(51,50,49);
-    
+    justify-content: space-around;
     padding-top: 70px;
 }
 .col1 {
-    margin-left: 10%;
+    /* margin-left: 10%; */
     font-size: 100%;
 }
 .col2 {
     float: right;
     font-size: 100%;
-    margin-left: 25%;
-    margin-bottom: 30px;
+    /* margin-left: 25%;
+    margin-bottom: 30px; */
     padding-bottom: 10px;
    
 }
@@ -508,31 +586,56 @@ h2.recommend {
     
     
 }
-.resource-section h2 {
+.resource-section h3 {
+    color: grey;
+}
+.resource-section h3 a {
     color: grey;
     margin-bottom: 30px;
+    text-decoration: none;
 }
 
-.first-box ul li{
+.first-box {
     line-height: 30px;
     margin-right: 100px;
     margin-left: 100px;
 }
-
+.first-box li a {
+    text-decoration: none;
+    color: #fff;
+    list-style: none;
+}
 .second-box {
     line-height: 30px;
     margin-right: 100px;
     margin-left: 100px;
+}
+
+.second-box li a {
+    text-decoration: none;
+    color:#fff;
+    list-style: none;
 }
 .third-box {
     line-height: 30px;
     margin-right: 100px;
     margin-left: 100px;
 }
+
+.third-box li a {
+    text-decoration: none;
+    color:#fff;
+    list-style: none;
+}
 .fourth-box {
     line-height: 30px;
     margin-right: 100px;
     margin-left: 100px;
+}
+.fourth-box li a {
+    text-decoration: none;
+    color:#fff;
+    list-style: none;
 }
 .date-comments {
     display: flex;
@@ -540,6 +643,14 @@ h2.recommend {
 }
 .date1 {
     margin-right: 100px;
+}
+.date1 a {
+    text-decoration: none;
+    color: grey;
+}
+.date2 a {
+    text-decoration: none;
+    color: grey;
 }
 .fa-clock {
     margin-right: 10px;
@@ -553,7 +664,10 @@ h2.recommend {
     padding-left: 150px;
     width: 100%;
 }
-
+.region-section a {
+    color:#fff;
+    text-decoration: none;
+}
 .region {
    margin-right: 20px;
 }
@@ -597,6 +711,11 @@ h2.recommend {
     padding-left:150px;
 
 }
+.terms-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
 .terms {
     margin-right:900px;
 }
@@ -608,9 +727,16 @@ h2.recommend {
     color: white;
     
 }
+.copy-right a {
+    color: grey;
+}
 .social-media {
     float:right;
     margin-left: 200px;
+}
+.social-media a {
+    text-decoration: none;
+    color:grey;
 }
 .fa-facebook {
     font-size: 30px;
