@@ -513,11 +513,12 @@ h2.recommend {
     margin-bottom: 30px;
 }
 
-.first-box {
+.first-box ul li{
     line-height: 30px;
     margin-right: 100px;
     margin-left: 100px;
 }
+
 .second-box {
     line-height: 30px;
     margin-right: 100px;
