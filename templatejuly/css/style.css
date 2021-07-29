@@ -600,6 +600,9 @@ h2.recommend {
     margin-right: 100px;
     margin-left: 100px;
 }
+.first-box-link li {
+    list-style: none;
+}
 .first-box li a {
     text-decoration: none;
     color: #fff;
@@ -609,6 +612,9 @@ h2.recommend {
     line-height: 30px;
     margin-right: 100px;
     margin-left: 100px;
+}
+.second-box-link {
+    list-style: none;
 }
 
 .second-box li a {
@@ -621,7 +627,9 @@ h2.recommend {
     margin-right: 100px;
     margin-left: 100px;
 }
-
+.third-box-link {
+    list-style: none;
+}
 .third-box li a {
     text-decoration: none;
     color:#fff;
@@ -631,6 +639,9 @@ h2.recommend {
     line-height: 30px;
     margin-right: 100px;
     margin-left: 100px;
+}
+.fourth-box-link {
+     list-style: none;
 }
 .fourth-box li a {
     text-decoration: none;
